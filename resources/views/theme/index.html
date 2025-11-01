@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أثار هيرب - منتجات عشبية طبيعية</title>
+    
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <!-- <span>أثار هيرب</span> -->
+                <img src="logo.png" alt="أثار هيرب" height="70">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">المنتجات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">الفئات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">المدونة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-actions">
+                    <button class="btn-icon" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    
+                    <a href="cart.html" class="btn-icon cart-btn" aria-label="عرض السلة">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+        <!-- Banner Slider -->
+        <section class="banner-slider-section">
+            <div id="bannerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="banner (1).png" class="d-block w-100" alt="منتجات عشبية">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption">
+                            <h2 class="carousel-title">منتجات عشبية طبيعية 100%</h2>
+                            <p class="carousel-subtitle">جودة عالية من الطبيعة لصحة أفضل</p>
+                            <a href="products.html" class="btn btn-secondary">تسوق الآن</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="banner (2).png" class="d-block w-100" alt="زيت الزيتون">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption">
+                            <h2 class="carousel-title">زيت الزيتون البكر الممتاز</h2>
+                            <p class="carousel-subtitle">عصرة أولى باردة، غني بالفوائد الصحية</p>
+                            <a href="products.html" class="btn btn-carousel">اطلب الآن</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="banner (3).png" class="d-block w-100" alt="شحن مجاني">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption">
+                            <h2 class="carousel-title">شحن مجاني للطلبات فوق 200 ريال</h2>
+                            <p class="carousel-subtitle">استمتع بتوصيل سريع ومجاني</p>
+                            <a href="products.html" class="btn btn-carousel">ابدأ التسوق</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">السابق</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">التالي</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-section" style="display: none;">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title fade-in">أثار هيرب</h1>
+                <p class="hero-subtitle fade-in">منتجات عشبية طبيعية</p>
+                <p class="hero-tagline fade-in">جودة عالية من الطبيعة</p>
+                <a href="products.html" class="btn btn-hero fade-in">
+                    تسوق الآن
+                    <i class="fas fa-arrow-left ms-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="section-products">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>منتجاتنا المميزة</h2>
+                    <p>اختر من بين مجموعة متنوعة من المنتجات الطبيعية عالية الجودة</p>
+                </div>
+                
+                <div class="row g-4" id="featuredProducts">
+                    <!-- Products will be loaded here by JS -->
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="products.html" class="btn btn-outline-primary">
+                        عرض جميع المنتجات
+                        <i class="fas fa-arrow-left ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section-testimonials py-5">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>آراء عملائنا</h2>
+                    <p>ماذا يقول عملاؤنا السعداء عن منتجاتنا</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"منتجات ممتازة وجودة عالية، أنصح بشدة بمنتجات أثار هيرب. الزيت والعسل من أفضل ما جربت"</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b739b983?w=150&h=150&fit=crop&crop=faces" alt="سارة أحمد" class="testimonial-avatar">
+                                <div>
+                                    <h5>سارة أحمد</h5>
+                                    <p>الرياض</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"زيت الزيتون من أفضل ما جربت، طعم أصيل ونقاء واضح. خدمة التوصيل سريعة ومنتظمة"</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces" alt="أحمد محمد" class="testimonial-avatar">
+                                <div>
+                                    <h5>أحمد محمد</h5>
+                                    <p>جدة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"خدمة عملاء رائعة وسرعة في التوصيل، المنتجات طبيعية 100% كما هو موعود. شكراً لكم"</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=faces" alt="فاطمة علي" class="testimonial-avatar">
+                                <div>
+                                    <h5>فاطمة علي</h5>
+                                    <p>الدمام</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-faq">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>الأسئلة الشائعة</h2>
+                    <p>إجابات على الأسئلة الأكثر شيوعاً</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion accordion-flush" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        ما هي طرق الدفع المتاحة؟
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نوفر عدة طرق دفع: الدفع عند الاستلام، التحويل البنكي، الفيزا والماستركارد، وكذلك الدفع عبر أبل باي وSTC Pay.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        كم تستغرق عملية التوصيل؟
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        يتم التوصيل خلال 2-5 أيام عمل داخل المملكة. للرياض وجدة والدمام: 1-2 يوم عمل. المناطق الأخرى: 3-5 أيام عمل.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        هل منتجاتكم طبيعية 100%؟
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نعم، جميع منتجاتنا طبيعية 100% ومعتمدة من وزارة الصحة السعودية. لدينا شهادات جودة وتحاليل مخبرية لكل منتج.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        كيف يمكنني إرجاع أو استبدال المنتج؟
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        يمكن إرجاع أو استبدال المنتج خلال 14 يوم من تاريخ الاستلام بشرط عدم فتح المنتج. نتحمل تكلفة الإرجاع في حال وجود عيب.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                        هل تقدمون شحن مجاني؟
+                                    </button>
+                                </h2>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نعم، نوفر شحن مجاني للطلبات التي تزيد عن 200 ريال داخل المملكة. للطلبات الأقل، رسوم الشحن 20 ريال.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                        ما هي شهادات الجودة لمنتجاتكم؟
+                                    </button>
+                                </h2>
+                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        منتجاتنا حاصلة على شهادات: هيئة الغذاء والدواء السعودية، ISO 22000، الشهادة العضوية، وشهادة الحلال من المركز الإسلامي.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Preview -->
+        <section class="section-blog-preview py-5">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>أحدث المقالات</h2>
+                    <p>تابع آخر المقالات والنصائح الصحية</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=250&fit=crop" alt="زيت الزيتون">
+                                <span class="blog-category">الصحة والجمال</span>
+                            </div>
+                            <div class="blog-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 28 أكتوبر 2025</span>
+                                    <span><i class="fas fa-user"></i> د. منال العتيبي</span>
+                                </div>
+                                <h3 class="blog-title">فوائد زيت الزيتون البكر للصحة والجمال</h3>
+                                <p class="blog-excerpt">اكتشف الفوائد المذهلة لزيت الزيتون البكر وكيف يمكن أن يحسن صحتك وجمالك بطرق طبيعية...</p>
+                                <a href="blog.html" class="btn btn-link">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1587049352846-4a222e784403?w=400&h=250&fit=crop" alt="عسل">
+                                <span class="blog-category">نصائح المنتجات</span>
+                            </div>
+                            <div class="blog-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 25 أكتوبر 2025</span>
+                                    <span><i class="fas fa-user"></i> أ. سعد المطيري</span>
+                                </div>
+                                <h3 class="blog-title">طرق تمييز العسل الأصلي من المقلد</h3>
+                                <p class="blog-excerpt">تعلم كيفية التفريق بين العسل الطبيعي الأصلي والمقلد من خلال اختبارات بسيطة يمكن إجراؤها في المنزل...</p>
+                                <a href="blog.html" class="btn btn-link">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=250&fit=crop" alt="أعشاب">
+                                <span class="blog-category">الطب البديل</span>
+                            </div>
+                            <div class="blog-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 22 أكتوبر 2025</span>
+                                    <span><i class="fas fa-user"></i> د. عائشة الغامدي</span>
+                                </div>
+                                <h3 class="blog-title">الأعشاب المفيدة لتقوية جهاز المناعة</h3>
+                                <p class="blog-excerpt">استعرض أهم الأعشاب الطبيعية التي تساعد في تقوية جهاز المناعة ومقاومة الأمراض...</p>
+                                <a href="blog.html" class="btn btn-link">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="blog.html" class="btn btn-outline-primary">
+                        عرض جميع المقالات
+                        <i class="fas fa-arrow-left ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section-about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">من نحن</h2>
+                        <p class="lead">أثار هيرب هو متجرك الموثوق للمنتجات العشبية والطبيعية عالية الجودة</p>
+                        <p>نحن نؤمن بقوة الطبيعة في تحسين الصحة والعافية. نقدم لكم منتجات مختارة بعناية من أجود المصادر الطبيعية، مع الالتزام بأعلى معايير الجودة والنقاء.</p>
+                        <div class="features-grid mt-4">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>منتجات طبيعية 100%</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>جودة عالية مضمونة</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>أسعار منافسة</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>توصيل سريع</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-image text-center">
+                            <img src="logo.png" alt="منتجات طبيعية" width="200px" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Legacy SPA Pages (Hidden) -->
+    <div id="productsPage" class="page" style="display: none;">
+        <section class="section-page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>جميع المنتجات</h1>
+                    <p>تصفح مجموعتنا الكاملة من المنتجات الطبيعية</p>
+                </div>
+                
+                <div class="row g-4" id="allProducts">
+                    <!-- Products will be loaded here by JS -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="productDetailPage" class="page">
+        <section class="section-page">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">الرئيسية</a></li>
+                        <li class="breadcrumb-item"><a href="#" onclick="showPage('products')">المنتجات</a></li>
+                        <li class="breadcrumb-item active" id="breadcrumbProduct">المنتج</li>
+                    </ol>
+                </nav>
+                
+                <div class="row" id="productDetailContent">
+                    <!-- Product detail will be loaded here by JS -->
+                </div>
+                
+                <div class="section-related mt-5">
+                    <h3 class="mb-4">منتجات ذات صلة</h3>
+                    <div class="row g-4" id="relatedProducts">
+                        <!-- Related products will be loaded here by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cart Page -->
+    <div id="cartPage" class="page">
+        <section class="section-page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>سلة التسوق</h1>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="cartItems">
+                            <!-- Cart items will be loaded here by JS -->
+                        </div>
+                        
+                        <div id="emptyCart" class="empty-cart" style="display: none;">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>السلة فارغة</h3>
+                            <p>لم تقم بإضافة أي منتجات بعد</p>
+                            <button class="btn btn-primary" onclick="showPage('products')">
+                                متابعة التسوق
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="cart-summary" id="cartSummary">
+                            <!-- Cart summary will be loaded here by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="aboutPage" class="page">
+        <section class="section-page">
+            <div class="container">
+                <div class="page-header text-center">
+                    <h1>من نحن</h1>
+                    <p class="lead">تعرف على قصتنا ورؤيتنا</p>
+                </div>
+                
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=600" alt="من نحن" class="img-fluid rounded">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">رؤيتنا</h2>
+                        <p>نسعى لأن نكون الخيار الأول للباحثين عن المنتجات الطبيعية عالية الجودة في المنطقة. نؤمن بأن الطبيعة تحمل الحلول الأفضل للصحة والعافية.</p>
+                        <p>منذ تأسيسنا، التزمنا بتقديم منتجات طبيعية نقية 100%، مع الحفاظ على أعلى معايير الجودة في كل مرحلة من مراحل الإنتاج والتوزيع.</p>
+                    </div>
+                </div>
+                
+                <div class="row text-center mt-5">
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <h3>500+</h3>
+                            <p>عميل سعيد</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-card">
+                            <i class="fas fa-box"></i>
+                            <h3>50+</h3>
+                            <p>منتج طبيعي</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-card">
+                            <i class="fas fa-award"></i>
+                            <h3>100%</h3>
+                            <p>جودة مضمونة</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-card">
+                            <i class="fas fa-truck"></i>
+                            <h3>24 ساعة</h3>
+                            <p>توصيل سريع</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contactPage" class="page">
+        <section class="section-page">
+            <div class="container">
+                <div class="page-header text-center">
+                    <h1>اتصل بنا</h1>
+                    <p class="lead">نحن هنا للإجابة على استفساراتكم</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="contact-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>العنوان</h4>
+                            <p>الرياض، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>الهاتف</h4>
+                            <p dir="ltr">+966 50 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@atharherb.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="contact-form">
+                            <h3 class="mb-4">أرسل لنا رسالة</h3>
+                            <form onsubmit="handleContactSubmit(event)">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">الاسم</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">الرسالة</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>أثار هيرب</h5>
+                    <p>متجرك الموثوق للمنتجات العشبية والطبيعية عالية الجودة</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="categories.html">الفئات</a></li>
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>الفئات</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">زيوت طبيعية</a></li>
+                        <li><a href="#">عسل</a></li>
+                        <li><a href="#">أعشاب</a></li>
+                        <li><a href="#">توابل</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>تواصل معنا</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> <span dir="ltr">+966 50 123 4567</span></li>
+                        <li><i class="fas fa-envelope"></i> info@atharherb.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، السعودية</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center py-3">
+                <p class="mb-0">&copy; 2025 أثار هيرب. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="toast" class="toast" role="alert">
+            <div class="toast-header">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong class="me-auto">إشعار</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                تمت العملية بنجاح
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>

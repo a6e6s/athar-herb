@@ -17,10 +17,14 @@ class Page extends Model
      */
     protected $fillable = [
         'title',
+        'title_ar',
         'slug',
         'content',
+        'content_ar',
         'meta_title',
+        'meta_title_ar',
         'meta_description',
+        'meta_description_ar',
         'is_published',
         'published_at',
     ];

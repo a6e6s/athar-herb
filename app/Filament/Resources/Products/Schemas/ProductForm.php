@@ -43,13 +43,19 @@ class ProductForm
                                             )
                                             ->placeholder(__('filament.resources.products.placeholders.name')),
 
+                                        TextInput::make('name_ar')
+                                            ->label(__('filament.resources.products.fields.name') . ' (AR)')
+                                            ->maxLength(255)
+                                            ->placeholder(__('filament.resources.products.placeholders.name') . ' بالعربية'),
+
                                         TextInput::make('slug')
                                             ->label(__('filament.resources.products.fields.slug'))
                                             ->required()
                                             ->maxLength(255)
                                             ->unique(ignoreRecord: true)
                                             ->placeholder(__('filament.resources.products.placeholders.slug'))
-                                            ->helperText(__('filament.resources.products.helpers.slug')),
+                                            ->helperText(__('filament.resources.products.helpers.slug'))
+                                            ->columnSpanFull(),
 
                                         Select::make('category_id')
                                             ->label(__('filament.resources.products.fields.category_id'))
@@ -89,6 +95,13 @@ class ProductForm
                                             ->helperText(__('filament.resources.products.helpers.short_description'))
                                             ->columnSpanFull(),
 
+                                        Textarea::make('short_description_ar')
+                                            ->label(__('filament.resources.products.fields.short_description') . ' (AR)')
+                                            ->rows(3)
+                                            ->maxLength(500)
+                                            ->placeholder(__('filament.resources.products.placeholders.short_description') . ' بالعربية')
+                                            ->columnSpanFull(),
+
                                         RichEditor::make('description')
                                             ->label(__('filament.resources.products.fields.description'))
                                             ->required()
@@ -105,6 +118,23 @@ class ProductForm
                                                 'redo',
                                             ])
                                             ->placeholder(__('filament.resources.products.placeholders.description'))
+                                            ->columnSpanFull(),
+
+                                        RichEditor::make('description_ar')
+                                            ->label(__('filament.resources.products.fields.description') . ' (AR)')
+                                            ->toolbarButtons([
+                                                'bold',
+                                                'italic',
+                                                'underline',
+                                                'strike',
+                                                'bulletList',
+                                                'orderedList',
+                                                'h2',
+                                                'h3',
+                                                'undo',
+                                                'redo',
+                                            ])
+                                            ->placeholder(__('filament.resources.products.placeholders.description') . ' بالعربية')
                                             ->columnSpanFull(),
                                     ]),
                             ]),
@@ -182,6 +212,11 @@ class ProductForm
                                             ->maxLength(50)
                                             ->placeholder(__('filament.resources.products.placeholders.unit_of_measure'))
                                             ->helperText(__('filament.resources.products.helpers.unit_of_measure')),
+
+                                        TextInput::make('unit_of_measure_ar')
+                                            ->label(__('filament.resources.products.fields.unit_of_measure') . ' (AR)')
+                                            ->maxLength(50)
+                                            ->placeholder(__('filament.resources.products.placeholders.unit_of_measure') . ' بالعربية'),
 
                                         DatePicker::make('expiration_date')
                                             ->label(__('filament.resources.products.fields.expiration_date'))

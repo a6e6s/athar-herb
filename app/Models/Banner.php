@@ -17,11 +17,15 @@ class Banner extends Model
      */
     protected $fillable = [
         'title',
+        'title_ar',
         'subtitle',
+        'subtitle_ar',
         'description',
+        'description_ar',
         'image',
         'link_url',
         'link_text',
+        'link_text_ar',
         'is_active',
         'sort_order',
         'target_blank',
