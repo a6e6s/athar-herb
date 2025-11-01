@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::where('is_active', true)
-            ->orderBy('sort_order')
+            ->orderBy('created_at')
             ->get();
 
         return view('pages.categories.index', compact('categories'));
@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
         $products = $category->products()
             ->where('is_active', true)
-            ->orderBy('sort_order')
+            ->orderBy('created_at')
             ->paginate(12);
 
         return view('pages.categories.show', compact('category', 'products'));

@@ -228,7 +228,7 @@
                                 <div class="blog-meta mb-3 text-muted small">
                                     <span class="me-3">
                                         <i class="fas fa-calendar ms-1"></i>
-                                        {{ $post->published_at?->format('d M Y') }}
+                                        {{ $post->published_at }}
                                     </span>
                                     @if($post->author)
                                         <span>

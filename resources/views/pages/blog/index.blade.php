@@ -8,10 +8,6 @@
             <h1 class="fw-bold mb-4">المدونة</h1>
 
             <div class="row g-4">
-                @php
-                    $posts = \App\Models\Post::where('is_active', true)->paginate(9);
-                @endphp
-
                 @foreach($posts as $post)
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100 shadow-sm">

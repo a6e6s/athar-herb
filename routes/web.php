@@ -60,3 +60,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/locale/{locale}', [HomeController::class, 'switchLocale'])->name('locale');
 
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
+Route::get('login', [UserController::class, 'login'])->name('login');
