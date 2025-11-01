@@ -18,11 +18,6 @@
 
 @section('content')
     <!-- Banner Slider -->
-    @php
-        $banners = \App\Models\Banner::where('is_active', true)
-            ->orderBy('sort_order')
-            ->get();
-    @endphp
     @if($banners->count() > 0)
         @include('components.banner-slider', ['banners' => $banners])
     @endif
@@ -36,14 +31,6 @@
             </div>
 
             <div class="row g-4">
-                @php
-                    $featuredProducts = \App\Models\Product::where('is_active', true)
-                        ->where('is_featured', true)
-                        ->orderBy('sort_order')
-                        ->limit(8)
-                        ->get();
-                @endphp
-
                 @forelse($featuredProducts as $product)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card product-card h-100 shadow-sm">
@@ -134,13 +121,6 @@
             </div>
 
             <div class="row g-4">
-                @php
-                    $testimonials = \App\Models\Testimonial::where('is_active', true)
-                        ->orderBy('sort_order')
-                        ->limit(3)
-                        ->get();
-                @endphp
-
                 @forelse($testimonials as $testimonial)
                     <div class="col-lg-4 col-md-6">
                         <div class="card testimonial-card h-100 shadow-sm">
@@ -195,12 +175,6 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="accordion accordion-flush" id="faqAccordion">
-                        @php
-                            $faqs = \App\Models\Faq::where('is_active', true)
-                                ->orderBy('sort_order')
-                                ->get();
-                        @endphp
-
                         @foreach($faqs as $index => $faq)
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
@@ -235,13 +209,6 @@
             </div>
 
             <div class="row g-4">
-                @php
-                    $posts = \App\Models\Post::where('is_active', true)
-                        ->orderBy('published_at', 'desc')
-                        ->limit(3)
-                        ->get();
-                @endphp
-
                 @forelse($posts as $post)
                     <div class="col-lg-4 col-md-6">
                         <div class="card blog-card h-100 shadow-sm">

@@ -49,19 +49,6 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogoHeight('40px')
             ->renderHook('panels::topbar.end', fn() => view('filament.language-switcher'))
             ->font('Cairo')
-            // the below code snippets are wrong and no need to add them
-            // ->renderHook(
-            //     'panels::styles.before',
-            //     fn() => app()->getLocale() === 'ar'
-            //         ? '<link rel="stylesheet" href="' . \Illuminate\Support\Facades\Vite::asset('resources/css/filament-rtl.css') . '">'
-            //         : ''
-            // )
-            // ->renderHook(
-            //     'panels::head.end',
-            //     fn() => app()->getLocale() === 'ar'
-            //         ? '<script>document.documentElement.setAttribute("dir", "rtl");</script>'
-            //         : '<script>document.documentElement.setAttribute("dir", "ltr");</script>'
-            // )
             ->navigationGroups([
                 __('filament.navigation.groups.e-commerce'),
                 __('filament.navigation.groups.content'),

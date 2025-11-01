@@ -63,7 +63,6 @@
                 <ul class="list-unstyled">
                     @php
                         $categories = \App\Models\Category::where('is_active', true)
-                            ->orderBy('sort_order')
                             ->limit(6)
                             ->get();
                     @endphp

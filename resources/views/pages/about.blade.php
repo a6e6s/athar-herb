@@ -9,27 +9,27 @@
                 <h1 class="fw-bold">من نحن</h1>
                 <p class="lead">تعرف على قصتنا ورؤيتنا</p>
             </div>
-            
+
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=600" 
-                         alt="من نحن" 
+                    <img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=600"
+                         alt="من نحن"
                          class="img-fluid rounded shadow">
                 </div>
-                
+
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-4">رؤيتنا</h2>
                     <p class="text-muted">
-                        نسعى لأن نكون الخيار الأول للباحثين عن المنتجات الطبيعية عالية الجودة في المنطقة. 
+                        نسعى لأن نكون الخيار الأول للباحثين عن المنتجات الطبيعية عالية الجودة في المنطقة.
                         نؤمن بأن الطبيعة تحمل الحلول الأفضل للصحة والعافية.
                     </p>
                     <p class="text-muted">
-                        منذ تأسيسنا، التزمنا بتقديم منتجات طبيعية نقية 100%، مع الحفاظ على أعلى معايير الجودة 
+                        منذ تأسيسنا، التزمنا بتقديم منتجات طبيعية نقية 100%، مع الحفاظ على أعلى معايير الجودة
                         في كل مرحلة من مراحل الإنتاج والتوزيع.
                     </p>
                 </div>
             </div>
-            
+
             <div class="row text-center mt-5">
                 <div class="col-md-3 mb-4">
                     <div class="card stat-card h-100 shadow-sm">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-3 mb-4">
                     <div class="card stat-card h-100 shadow-sm">
                         <div class="card-body">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-3 mb-4">
                     <div class="card stat-card h-100 shadow-sm">
                         <div class="card-body">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-3 mb-4">
                     <div class="card stat-card h-100 shadow-sm">
                         <div class="card-body">

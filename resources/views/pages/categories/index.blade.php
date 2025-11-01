@@ -6,12 +6,12 @@
     <section class="py-5" style="margin-top: 80px;">
         <div class="container">
             <h1 class="fw-bold mb-4">جميع الأقسام</h1>
-            
+
             <div class="row g-4">
                 @php
                     $categories = \App\Models\Category::where('is_active', true)->get();
                 @endphp
-                
+
                 @foreach($categories as $category)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <a href="{{ route('categories.show', $category->slug) }}" class="text-decoration-none">

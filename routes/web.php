@@ -1,84 +1,59 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
 
-// Frontend Routes
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+// Home Route
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Products Routes
 Route::prefix('products')->name('products.')->group(function () {
-    Route::get('/', function () {
-        return view('pages.products.index');
-    })->name('index');
-    
-    Route::get('/search', function () {
-        return view('pages.products.search');
-    })->name('search');
-    
-    Route::get('/{slug}', function ($slug) {
-        return view('pages.products.show', compact('slug'));
-    })->name('show');
+    Route::get('/', [ProductController::class, 'index'])->name('index');
+    Route::get('/search', [ProductController::class, 'search'])->name('search');
+    Route::get('/{slug}', [ProductController::class, 'show'])->name('show');
 });
 
 // Categories Routes
 Route::prefix('categories')->name('categories.')->group(function () {
-    Route::get('/', function () {
-        return view('pages.categories.index');
-    })->name('index');
-    
-    Route::get('/{slug}', function ($slug) {
-        return view('pages.categories.show', compact('slug'));
-    })->name('show');
+    Route::get('/', [CategoryController::class, 'index'])->name('index');
+    Route::get('/{slug}', [CategoryController::class, 'show'])->name('show');
 });
 
 // Blog Routes
 Route::prefix('blog')->name('blog.')->group(function () {
-    Route::get('/', function () {
-        return view('pages.blog.index');
-    })->name('index');
-    
-    Route::get('/{slug}', function ($slug) {
-        return view('pages.blog.show', compact('slug'));
-    })->name('show');
+    Route::get('/', [BlogController::class, 'index'])->name('index');
+    Route::get('/{slug}', [BlogController::class, 'show'])->name('show');
 });
 
 // Static Pages
-Route::get('/about', function () {
-    return view('pages.about');
-})->name('about');
-
-Route::get('/contact', function () {
-    return view('pages.contact');
-})->name('contact');
-
-Route::get('/privacy', function () {
-    return view('pages.privacy');
-})->name('privacy');
-
-Route::get('/terms', function () {
-    return view('pages.terms');
-})->name('terms');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
+Route::get('/privacy', [PageController::class, 'privacy'])->name('privacy');
+Route::get('/terms', [PageController::class, 'terms'])->name('terms');
 
 // Cart & Wishlist Routes
-Route::get('/cart', function () {
-    return view('pages.cart');
-})->name('cart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-Route::get('/wishlist', function () {
-    return view('pages.wishlist');
-})->name('wishlist');
+Route::get('/wishlist', [CartController::class, 'wishlist'])->name('wishlist');
+Route::post('/wishlist/add', [CartController::class, 'addToWishlist'])->name('wishlist.add');
+Route::delete('/wishlist/{id}', [CartController::class, 'removeFromWishlist'])->name('wishlist.remove');
 
 // User Routes (requires authentication)
 Route::middleware(['auth'])->group(function () {
-    Route::get('/profile', function () {
-        return view('pages.profile');
-    })->name('profile');
-    
-    Route::get('/orders', function () {
-        return view('pages.orders.index');
-    })->name('orders.index');
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
+    Route::get('/orders', [UserController::class, 'orders'])->name('orders.index');
+    Route::get('/orders/{id}', [UserController::class, 'showOrder'])->name('orders.show');
 });
 
 // Locale Switcher
