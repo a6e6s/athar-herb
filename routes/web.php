@@ -11,7 +11,7 @@ use App\Http\Controllers\UserController;
 
 // Home Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
+Route::redirect('/dashboard', '/')->name('home.redirect');
 // Products Routes
 Route::prefix('products')->name('products.')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
@@ -57,9 +57,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Locale Switcher
-Route::get('/locale/{locale}', function ($locale) {
-    $locale = in_array($locale, ['en', 'ar']) ? $locale : 'en';
-    session(['locale' => $locale]);
-    app()->setLocale($locale);
-    return redirect()->back();
-})->name('locale');
+Route::get('/locale/{locale}', [HomeController::class, 'switchLocale'])->name('locale');
+
+Route::get('logout', [UserController::class, 'logout'])->name('logout');

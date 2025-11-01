@@ -535,7 +535,7 @@ select.form-control {
 
 /* Card component */
 .card {
-  background-color: var(--color-surface);
+  /* background-color: var(--color-surface); */
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-card-border);
   box-shadow: var(--shadow-sm);
@@ -746,28 +746,28 @@ select.form-control {
     --accent-gold: #b89f60;
     --bg-cream: #e5e4d0;
     --text-dark: #272922;
-    
+
     /* Light Mode Colors */
     --bg-color: #f8f9fa;
     --surface-color: #ffffff;
     --text-color: #272922;
     --text-secondary: #6c757d;
     --border-color: rgba(39, 41, 34, 0.15);
-    
+
     /* Spacing */
     --section-padding: 80px;
     --card-padding: 20px;
-    
+
     /* Border Radius */
     --radius-sm: 6px;
     --radius-md: 8px;
     --radius-lg: 12px;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -1865,12 +1865,12 @@ body.dark-mode .section-about {
 @media (max-width: 991px) {
     .hero-title { font-size: 3rem; }
     .hero-subtitle { font-size: 1.5rem; }
-    
+
     .navbar-actions {
         margin-top: 1rem;
         justify-content: center;
     }
-    
+
     .section-products,
     .section-about,
     .section-page {
@@ -1882,29 +1882,29 @@ body.dark-mode .section-about {
     .hero-title { font-size: 2.5rem; }
     .hero-subtitle { font-size: 1.25rem; }
     .hero-tagline { font-size: 1rem; }
-    
+
     .section-header h2 { font-size: 2rem; }
     .page-header h1 { font-size: 2rem; }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cart-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .cart-item-actions {
         width: 100%;
         justify-content: center;
     }
-    
+
     .cart-summary {
         position: static;
         margin-top: 2rem;
     }
-    
+
     .product-detail-price {
         font-size: 2rem;
     }
@@ -1914,25 +1914,25 @@ body.dark-mode .section-about {
     .hero-section {
         min-height: 500px;
     }
-    
+
     .hero-title { font-size: 2rem; }
     .hero-subtitle { font-size: 1.1rem; }
-    
+
     .btn-hero {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
     }
-    
+
     .section-products,
     .section-about,
     .section-page {
         padding: 40px 0;
     }
-    
+
     .product-image {
         height: 200px;
     }
-    
+
     .navbar-brand {
         font-size: 1.25rem;
     }

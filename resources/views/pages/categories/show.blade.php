@@ -6,7 +6,7 @@
     <section class="py-5" style="margin-top: 80px;">
         <div class="container">
             <h1 class="fw-bold mb-4">{{ $category->name_ar }}</h1>
-            
+
             @if($category->description_ar)
                 <p class="text-muted mb-4">{{ $category->description_ar }}</p>
             @endif

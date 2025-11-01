@@ -17,7 +17,7 @@
                     {!! nl2br(e($post->content_ar)) !!}
                 </div>
             </article>
-            
+
             @if($relatedPosts->count() > 0)
                 <div class="mt-5">
                     <h3 class="fw-bold mb-4">مقالات ذات صلة</h3>

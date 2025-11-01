@@ -61,7 +61,7 @@
                     @endif
                 </div>
             </div>
-            
+
             @if($relatedProducts->count() > 0)
                 <div class="mt-5">
                     <h3 class="fw-bold mb-4">منتجات ذات صلة</h3>
@@ -111,7 +111,7 @@
             }
         });
     }
-    
+
     function addToWishlist(productId) {
         fetch('/wishlist/add', {
             method: 'POST',
