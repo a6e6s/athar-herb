@@ -11,17 +11,17 @@ php artisan make:filament-resource Testimonial  --generate --view
 php artisan make:filament-resource User  --generate --view
 
 ## prompt for resource enhance and orginizing
-Please refine and enhance the (Product Resource) in my Laravel Filament v4 eCommerce application.
+Please refine and enhance the (categories Resource) in my Laravel Filament v4 eCommerce application.
 Focus on improving the visual design, layout, and overall user experience across all components — including Forms, Tables, and Infolists.
 
-Organize product fields into logical sections and tabs (e.g., General Info, Pricing, Inventory, Media, SEO).
+Organize product fields into logical sections and tabs.
 Apply consistent spacing, icons, and responsive design for a clean, modern interface.
 Improve table usability with better column organization, sorting, filtering, and quick actions.
-Enhance Infolist presentation with a clear and attractive layout for product details.
+Enhance Infolist presentation with a clear and attractive layout for (categories) details.
 Make sure to add the required translation 
-Ensure the UI aligns with Filament’s V4 best UX practices and provides a seamless workflow for managing products.
+Ensure the UI aligns with Filament’s V4 best UX practices and provides a seamless workflow for managing (categories).
 Important: 
-    1- when you use this types on form pages (Section,Tabs,Tab,Get,Str) use this 
+    1- when you use this types on form or ListRecords pages (Section,Tabs,Tab,Get,Str) use this 
         [
         use Filament\Schemas\Components\Section;
         use Filament\Schemas\Components\Tabs;

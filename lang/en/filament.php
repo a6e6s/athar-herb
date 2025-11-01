@@ -129,15 +129,76 @@ return [
             'label' => 'Category',
             'plural_label' => 'Categories',
             'navigation_label' => 'Categories',
+
+            'tabs' => [
+                'general' => 'General Information',
+                'settings' => 'Settings',
+            ],
+
+            'sections' => [
+                'basic_information' => 'Basic Information',
+                'basic_information_desc' => 'Enter the basic category details',
+                'arabic_content' => 'Arabic Content',
+                'arabic_content_desc' => 'Enter content in Arabic language',
+                'hierarchy' => 'Hierarchy',
+                'hierarchy_desc' => 'Set parent category if this is a subcategory',
+                'visibility' => 'Visibility',
+                'visibility_desc' => 'Control category visibility status',
+            ],
+
             'fields' => [
-                'name' => 'Name',
+                'name' => 'Category Name',
+                'name_ar' => 'Category Name (Arabic)',
                 'slug' => 'Slug',
                 'description' => 'Description',
+                'description_ar' => 'Description (Arabic)',
                 'parent_id' => 'Parent Category',
                 'is_active' => 'Is Active',
+                'products_count' => 'Products Count',
                 'created_at' => 'Created At',
                 'updated_at' => 'Updated At',
                 'deleted_at' => 'Deleted At',
+            ],
+
+            'placeholders' => [
+                'name' => 'Enter category name',
+                'name_ar' => 'Enter category name in Arabic',
+                'slug' => 'Auto-generated from name',
+                'description' => 'Category description in English',
+                'description_ar' => 'Category description in Arabic',
+                'parent_id' => 'Select parent category',
+            ],
+
+            'helpers' => [
+                'slug' => 'Used in category URL. Must be unique.',
+                'name' => 'Category name as it will appear to customers',
+                'description' => 'Brief description of the category',
+                'parent_id' => 'Select a parent category to create a subcategory',
+                'is_active' => 'If inactive, category and its products will not be visible to customers',
+            ],
+
+            'filters' => [
+                'active' => 'Active',
+                'inactive' => 'Inactive',
+                'parent_categories' => 'Parent Categories',
+                'subcategories' => 'Subcategories',
+                'has_products' => 'Has Products',
+                'trashed' => 'Trashed',
+            ],
+
+            'badges' => [
+                'active' => 'Active',
+                'inactive' => 'Inactive',
+                'parent' => 'Parent Category',
+                'subcategory' => 'Subcategory',
+            ],
+
+            'actions' => [
+                'view' => 'View',
+                'edit' => 'Edit',
+                'delete' => 'Delete',
+                'restore' => 'Restore',
+                'force_delete' => 'Force Delete',
             ],
         ],
 

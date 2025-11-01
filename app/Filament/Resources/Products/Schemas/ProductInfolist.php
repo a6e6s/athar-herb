@@ -19,6 +19,7 @@ class ProductInfolist
                 ImageEntry::make('image_path')
                     ->label(__('filament.resources.products.fields.image_path'))
                     ->defaultImageUrl(url('/images/placeholder-product.png'))
+                    ->disk('public')
                     ->columnSpan(1),
 
                 // Product Basic Info
@@ -156,6 +157,7 @@ class ProductInfolist
                 ImageEntry::make('secondary_images')
                     ->label(__('filament.resources.products.fields.secondary_images'))
                     ->placeholder('-')
+                    ->disk('public')
                     ->columnSpanFull(),
 
                 // Timestamps

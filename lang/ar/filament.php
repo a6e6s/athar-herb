@@ -129,15 +129,76 @@ return [
             'label' => 'فئة',
             'plural_label' => 'الفئات',
             'navigation_label' => 'الفئات',
+
+            'tabs' => [
+                'general' => 'معلومات عامة',
+                'settings' => 'الإعدادات',
+            ],
+
+            'sections' => [
+                'basic_information' => 'المعلومات الأساسية',
+                'basic_information_desc' => 'أدخل تفاصيل الفئة الأساسية',
+                'arabic_content' => 'المحتوى بالعربية',
+                'arabic_content_desc' => 'أدخل المحتوى باللغة العربية',
+                'hierarchy' => 'التسلسل الهرمي',
+                'hierarchy_desc' => 'حدد الفئة الرئيسية إذا كانت هذه فئة فرعية',
+                'visibility' => 'الظهور',
+                'visibility_desc' => 'التحكم في حالة ظهور الفئة',
+            ],
+
             'fields' => [
-                'name' => 'الاسم',
+                'name' => 'اسم الفئة',
+                'name_ar' => 'اسم الفئة بالعربية',
                 'slug' => 'المعرف',
                 'description' => 'الوصف',
+                'description_ar' => 'الوصف بالعربية',
                 'parent_id' => 'الفئة الأساسية',
                 'is_active' => 'نشط',
+                'products_count' => 'عدد المنتجات',
                 'created_at' => 'تاريخ الإنشاء',
                 'updated_at' => 'تاريخ التحديث',
                 'deleted_at' => 'تاريخ الحذف',
+            ],
+
+            'placeholders' => [
+                'name' => 'أدخل اسم الفئة',
+                'name_ar' => 'أدخل اسم الفئة بالعربية',
+                'slug' => 'يتم إنشاؤه تلقائياً من الاسم',
+                'description' => 'وصف الفئة بالإنجليزية',
+                'description_ar' => 'وصف الفئة بالعربية',
+                'parent_id' => 'اختر الفئة الرئيسية',
+            ],
+
+            'helpers' => [
+                'slug' => 'يستخدم في رابط URL الفئة. يجب أن يكون فريداً.',
+                'name' => 'اسم الفئة كما سيظهر للعملاء',
+                'description' => 'وصف مختصر للفئة',
+                'parent_id' => 'اختر فئة رئيسية لإنشاء فئة فرعية',
+                'is_active' => 'إذا كانت غير نشطة، لن تظهر الفئة ومنتجاتها للعملاء',
+            ],
+
+            'filters' => [
+                'active' => 'نشط',
+                'inactive' => 'غير نشط',
+                'parent_categories' => 'الفئات الرئيسية',
+                'subcategories' => 'الفئات الفرعية',
+                'has_products' => 'تحتوي على منتجات',
+                'trashed' => 'المحذوف',
+            ],
+
+            'badges' => [
+                'active' => 'نشط',
+                'inactive' => 'غير نشط',
+                'parent' => 'فئة رئيسية',
+                'subcategory' => 'فئة فرعية',
+            ],
+
+            'actions' => [
+                'view' => 'عرض',
+                'edit' => 'تحرير',
+                'delete' => 'حذف',
+                'restore' => 'استعادة',
+                'force_delete' => 'حذف نهائي',
             ],
         ],
 
