@@ -1,14 +1,5 @@
 models:
   # ====== E-COMMERCE MODELS ======
-  User:
-    name: string
-    email: string:unique
-    email_verified_at: nullable timestamp
-    password: string
-    role: enum:customer,admin default:customer
-    remember_token: rememberToken
-    timestamps: true
-
   Category:
     name: string
     slug: string:unique

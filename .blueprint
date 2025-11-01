@@ -1,22 +1,40 @@
 created:
+    - database/factories/UserFactory.php
     - database/factories/CategoryFactory.php
     - database/factories/ProductFactory.php
     - database/factories/OrderFactory.php
     - database/factories/OrderItemFactory.php
     - database/factories/ReviewFactory.php
     - database/factories/WishlistFactory.php
-    - database/migrations/2025_11_01_090450_create_categories_table.php
-    - database/migrations/2025_11_01_090451_create_products_table.php
-    - database/migrations/2025_11_01_090452_create_orders_table.php
-    - database/migrations/2025_11_01_090453_create_order_items_table.php
-    - database/migrations/2025_11_01_090454_create_reviews_table.php
-    - database/migrations/2025_11_01_090455_create_wishlists_table.php
+    - database/factories/PageFactory.php
+    - database/factories/PostFactory.php
+    - database/factories/TestimonialFactory.php
+    - database/factories/BannerFactory.php
+    - database/factories/FaqFactory.php
+    - database/migrations/2025_11_01_090822_create_users_table.php
+    - database/migrations/2025_11_01_090823_create_categories_table.php
+    - database/migrations/2025_11_01_090824_create_products_table.php
+    - database/migrations/2025_11_01_090825_create_orders_table.php
+    - database/migrations/2025_11_01_090826_create_order_items_table.php
+    - database/migrations/2025_11_01_090827_create_reviews_table.php
+    - database/migrations/2025_11_01_090828_create_wishlists_table.php
+    - database/migrations/2025_11_01_090829_create_pages_table.php
+    - database/migrations/2025_11_01_090830_create_posts_table.php
+    - database/migrations/2025_11_01_090831_create_testimonials_table.php
+    - database/migrations/2025_11_01_090832_create_banners_table.php
+    - database/migrations/2025_11_01_090833_create_faqs_table.php
+    - app/Models/User.php
     - app/Models/Category.php
     - app/Models/Product.php
     - app/Models/Order.php
     - app/Models/OrderItem.php
     - app/Models/Review.php
     - app/Models/Wishlist.php
+    - app/Models/Page.php
+    - app/Models/Post.php
+    - app/Models/Testimonial.php
+    - app/Models/Banner.php
+    - app/Models/Faq.php
 models:
     Category: { name: string, slug: 'string:unique', description: 'nullable text', parent_id: 'nullable id foreign:categories', is_active: 'boolean default:true', timestamps: timestamps }
     Product: { category_id: 'id foreign', name: string, slug: 'string:unique', short_description: 'nullable text', description: text, price: 'decimal:10,2', cost_price: 'nullable decimal:10,2', sku: 'string:unique', stock_quantity: 'integer default:0', low_stock_threshold: 'integer default:5', weight: 'nullable decimal:8,2', unit_of_measure: 'nullable string', expiration_date: 'nullable date', image_path: 'nullable string', secondary_images: 'nullable json', is_active: 'boolean default:true', is_featured: 'boolean default:false', timestamps: timestamps }
@@ -24,3 +42,9 @@ models:
     OrderItem: { order_id: 'id foreign', product_id: 'id foreign', product_name: string, price: 'decimal:10,2', quantity: integer, total: 'decimal:10,2', timestamps: timestamps }
     Review: { user_id: 'id foreign', product_id: 'id foreign', rating: 'integer:unsigned between:1,5', comment: 'nullable text', is_approved: 'boolean default:false', timestamps: timestamps }
     Wishlist: { user_id: 'id foreign', product_id: 'id foreign', timestamps: timestamps }
+    User: { name: string, email: 'string:unique', email_verified_at: 'nullable timestamp', password: string, role: 'enum:customer,admin default:customer', remember_token: rememberToken, timestamps: timestamps }
+    Page: { title: string, slug: 'string:unique', content: longText, meta_title: 'nullable string', meta_description: 'nullable string', is_published: 'boolean default:true', published_at: 'nullable timestamp', timestamps: timestamps }
+    Post: { title: string, slug: 'string:unique', excerpt: 'nullable text', content: longText, featured_image: 'nullable string', meta_title: 'nullable string', meta_description: 'nullable string', is_published: 'boolean default:false', published_at: 'nullable timestamp', user_id: 'id foreign', timestamps: timestamps }
+    Testimonial: { name: string, role: 'nullable string', content: text, rating: 'integer:unsigned between:1,5', avatar: 'nullable string', is_approved: 'boolean default:false', sort_order: 'integer default:0', timestamps: timestamps }
+    Banner: { title: string, subtitle: 'nullable string', description: 'nullable text', image: 'nullable string', link_url: 'nullable string', link_text: 'nullable string', is_active: 'boolean default:true', sort_order: 'integer default:0', target_blank: 'boolean default:false', timestamps: timestamps }
+    Faq: { question: string, answer: text, sort_order: 'integer default:0', is_active: 'boolean default:true', timestamps: timestamps }
