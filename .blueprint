@@ -1,0 +1,26 @@
+created:
+    - database/factories/CategoryFactory.php
+    - database/factories/ProductFactory.php
+    - database/factories/OrderFactory.php
+    - database/factories/OrderItemFactory.php
+    - database/factories/ReviewFactory.php
+    - database/factories/WishlistFactory.php
+    - database/migrations/2025_11_01_090450_create_categories_table.php
+    - database/migrations/2025_11_01_090451_create_products_table.php
+    - database/migrations/2025_11_01_090452_create_orders_table.php
+    - database/migrations/2025_11_01_090453_create_order_items_table.php
+    - database/migrations/2025_11_01_090454_create_reviews_table.php
+    - database/migrations/2025_11_01_090455_create_wishlists_table.php
+    - app/Models/Category.php
+    - app/Models/Product.php
+    - app/Models/Order.php
+    - app/Models/OrderItem.php
+    - app/Models/Review.php
+    - app/Models/Wishlist.php
+models:
+    Category: { name: string, slug: 'string:unique', description: 'nullable text', parent_id: 'nullable id foreign:categories', is_active: 'boolean default:true', timestamps: timestamps }
+    Product: { category_id: 'id foreign', name: string, slug: 'string:unique', short_description: 'nullable text', description: text, price: 'decimal:10,2', cost_price: 'nullable decimal:10,2', sku: 'string:unique', stock_quantity: 'integer default:0', low_stock_threshold: 'integer default:5', weight: 'nullable decimal:8,2', unit_of_measure: 'nullable string', expiration_date: 'nullable date', image_path: 'nullable string', secondary_images: 'nullable json', is_active: 'boolean default:true', is_featured: 'boolean default:false', timestamps: timestamps }
+    Order: { user_id: 'id foreign', order_number: 'string:unique', total_amount: 'decimal:10,2', status: 'enum:pending,processing,shipped,delivered,cancelled default:pending', shipping_address: json, billing_address: json, timestamps: timestamps }
+    OrderItem: { order_id: 'id foreign', product_id: 'id foreign', product_name: string, price: 'decimal:10,2', quantity: integer, total: 'decimal:10,2', timestamps: timestamps }
+    Review: { user_id: 'id foreign', product_id: 'id foreign', rating: 'integer:unsigned between:1,5', comment: 'nullable text', is_approved: 'boolean default:false', timestamps: timestamps }
+    Wishlist: { user_id: 'id foreign', product_id: 'id foreign', timestamps: timestamps }

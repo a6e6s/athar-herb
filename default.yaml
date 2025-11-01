@@ -1,0 +1,127 @@
+models:
+  # ====== E-COMMERCE MODELS ======
+  User:
+    name: string
+    email: string:unique
+    email_verified_at: nullable timestamp
+    password: string
+    role: enum:customer,admin default:customer
+    remember_token: rememberToken
+    timestamps: true
+
+  Category:
+    name: string
+    slug: string:unique
+    description: nullable text
+    parent_id: nullable id foreign:categories
+    is_active: boolean default:true
+    timestamps: true
+
+  Product:
+    category_id: id foreign
+    name: string
+    slug: string:unique
+    short_description: nullable text
+    description: text
+    price: decimal:10,2
+    cost_price: nullable decimal:10,2
+    sku: string:unique
+    stock_quantity: integer default:0
+    low_stock_threshold: integer default:5
+    weight: nullable decimal:8,2
+    unit_of_measure: nullable string
+    expiration_date: nullable date
+    image_path: nullable string
+    secondary_images: nullable json
+    is_active: boolean default:true
+    is_featured: boolean default:false
+    timestamps: true
+
+  Order:
+    user_id: id foreign
+    order_number: string:unique
+    total_amount: decimal:10,2
+    status: enum:pending,processing,shipped,delivered,cancelled default:pending
+    shipping_address: json
+    billing_address: json
+    timestamps: true
+
+  OrderItem:
+    order_id: id foreign
+    product_id: id foreign
+    product_name: string
+    price: decimal:10,2
+    quantity: integer
+    total: decimal:10,2
+    timestamps: true
+
+  Review:
+    user_id: id foreign
+    product_id: id foreign
+    rating: integer:unsigned between:1,5
+    comment: nullable text
+    is_approved: boolean default:false
+    timestamps: true
+
+  Wishlist:
+    user_id: id foreign
+    product_id: id foreign
+    timestamps: true
+
+  # ====== CMS MODELS ======
+  Page:
+    title: string
+    slug: string:unique
+    content: longText
+    meta_title: nullable string
+    meta_description: nullable string
+    is_published: boolean default:true
+    published_at: nullable timestamp
+    timestamps: true
+
+  Post:
+    title: string
+    slug: string:unique
+    excerpt: nullable text
+    content: longText
+    featured_image: nullable string
+    meta_title: nullable string
+    meta_description: nullable string
+    is_published: boolean default:false
+    published_at: nullable timestamp
+    user_id: id foreign # author (admin)
+    timestamps: true
+
+  Testimonial:
+    name: string
+    role: nullable string
+    content: text
+    rating: integer:unsigned between:1,5
+    avatar: nullable string
+    is_approved: boolean default:false
+    sort_order: integer default:0
+    timestamps: true
+
+  Banner:
+    title: string
+    subtitle: nullable string
+    description: nullable text
+    image: nullable string
+    link_url: nullable string
+    link_text: nullable string
+    is_active: boolean default:true
+    sort_order: integer default:0
+    target_blank: boolean default:false
+    timestamps: true
+
+  Faq:
+    question: string
+    answer: text
+    sort_order: integer default:0
+    is_active: boolean default:true
+    timestamps: true
+
+pivot_tables:
+  category_product:
+    category_id: id foreign
+    product_id: id foreign
