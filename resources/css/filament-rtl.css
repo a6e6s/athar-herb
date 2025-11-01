@@ -1,0 +1,131 @@
+/* RTL Support for Arabic Language in Filament */
+
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .fi-body {
+    direction: rtl;
+}
+
+html[dir="rtl"] .fi-sidebar {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .fi-topbar {
+    direction: rtl;
+}
+
+html[dir="rtl"] .fi-sidebar-nav {
+    padding-right: 0;
+    padding-left: 1rem;
+}
+
+html[dir="rtl"] .fi-sidebar-item {
+    text-align: right;
+}
+
+html[dir="rtl"] .fi-main {
+    margin-right: var(--sidebar-width, 16rem);
+    margin-left: 0;
+}
+
+html[dir="rtl"] .fi-form-field-wrapper {
+    text-align: right;
+}
+
+html[dir="rtl"] .fi-fo-field-wrp-label {
+    text-align: right;
+}
+
+html[dir="rtl"] .fi-ta-table {
+    direction: rtl;
+}
+
+html[dir="rtl"] .fi-ta-text {
+    text-align: right;
+}
+
+html[dir="rtl"] .fi-breadcrumbs {
+    direction: rtl;
+}
+
+html[dir="rtl"] .fi-dropdown {
+    text-align: right;
+}
+
+html[dir="rtl"] .fi-input-wrapper {
+    direction: rtl;
+}
+
+html[dir="rtl"] .fi-select {
+    direction: rtl;
+}
+
+html[dir="rtl"] .fi-modal {
+    direction: rtl;
+}
+
+html[dir="rtl"] .fi-notification {
+    text-align: right;
+}
+
+html[dir="rtl"] .fi-global-search {
+    direction: rtl;
+}
+
+/* Adjust padding and margins for RTL */
+html[dir="rtl"] [class*="ps-"] {
+    padding-left: 0 !important;
+    padding-right: var(--spacing) !important;
+}
+
+html[dir="rtl"] [class*="pe-"] {
+    padding-right: 0 !important;
+    padding-left: var(--spacing) !important;
+}
+
+html[dir="rtl"] [class*="ms-"] {
+    margin-left: 0 !important;
+    margin-right: var(--spacing) !important;
+}
+
+html[dir="rtl"] [class*="me-"] {
+    margin-right: 0 !important;
+    margin-left: var(--spacing) !important;
+}
+
+/* Icon alignment */
+html[dir="rtl"] .fi-btn-icon {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+html[dir="rtl"] .fi-sidebar-item-icon {
+    margin-left: 0.75rem;
+    margin-right: 0;
+}
+
+/* Table actions */
+html[dir="rtl"] .fi-ta-actions {
+    direction: rtl;
+}
+
+/* Form components */
+html[dir="rtl"] .fi-fo-checkbox,
+html[dir="rtl"] .fi-fo-radio {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+/* Tabs */
+html[dir="rtl"] .fi-tabs {
+    direction: rtl;
+}
+
+/* Badge positioning */
+html[dir="rtl"] .fi-badge {
+    direction: rtl;
+}

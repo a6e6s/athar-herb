@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Http\Middleware\SetLocale;
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -29,7 +31,32 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Blue,
+                'danger' => Color::Red,
+                'gray' => Color::Gray,
+                'info' => Color::Blue,
+                'success' => Color::Green,
+                'warning' => Color::Yellow,
+            ])
+            ->brandName('Athar Herb')
+            ->favicon(asset('favicon.ico'))
+            ->brandLogo(asset('images/logo.png'))
+            ->renderHook('panels::topbar.end', fn() => view('filament.language-switcher'))
+            ->renderHook(
+                'panels::styles.before',
+                fn() => app()->getLocale() === 'ar'
+                    ? '<link rel="stylesheet" href="' . \Illuminate\Support\Facades\Vite::asset('resources/css/filament-rtl.css') . '">'
+                    : ''
+            )
+            ->renderHook(
+                'panels::head.end',
+                fn() => app()->getLocale() === 'ar'
+                    ? '<script>document.documentElement.setAttribute("dir", "rtl");</script>'
+                    : '<script>document.documentElement.setAttribute("dir", "ltr");</script>'
+            )
+            ->navigationGroups([
+                __('filament.navigation.groups.e-commerce'),
+                __('filament.navigation.groups.content'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
@@ -51,6 +78,10 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                SetLocale::class,
+            ])
+            ->plugins([
+                FilamentShieldPlugin::make(), // Register the plugin
             ])
             ->authMiddleware([
                 Authenticate::class,
