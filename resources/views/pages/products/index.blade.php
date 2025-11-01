@@ -60,7 +60,7 @@
                                         </span>
                                     @endif
 
-                                    <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top"
+                                    <img src="{{ asset('storage/' . $product->image_path) }}" class="card-img-top"
                                         alt="{{ $product->name_ar }}" style="height: 250px; object-fit: cover;">
 
                                     <div class="card-body d-flex flex-column">

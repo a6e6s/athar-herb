@@ -31,13 +31,12 @@ class CartController extends Controller
                 'id' => $product->id,
                 'name' => $product->name_ar,
                 'price' => $product->discount_price ?? $product->price,
-                'image' => $product->image,
+                'image' => $product->image_path,
                 'quantity' => $validated['quantity'],
             ];
         }
 
         session()->put('cart', $cart);
-
         return response()->json([
             'success' => true,
             'cart_count' => array_sum(array_column($cart, 'quantity')),
@@ -104,7 +103,7 @@ class CartController extends Controller
                 'id' => $product->id,
                 'name' => $product->name_ar,
                 'price' => $product->discount_price ?? $product->price,
-                'image' => $product->image,
+                'image' => $product->image_path,
             ];
         }
 

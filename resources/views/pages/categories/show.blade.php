@@ -15,7 +15,7 @@
                 @foreach($products as $product)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card product-card h-100 shadow-sm">
-                            <img src="{{ asset('storage/' . $product->image) }}"
+                            <img src="{{ asset('storage/' . $product->image_path) }}"
                                  class="card-img-top"
                                  alt="{{ $product->name_ar }}"
                                  style="height: 200px; object-fit: cover;">

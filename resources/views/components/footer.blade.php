@@ -1,4 +1,4 @@
-<footer class="bg-dark text-white py-5 mt-5">
+<footer class="bg-dark text-white py-5 ">
     <div class="container">
         <div class="row g-4">
             <!-- About Section -->

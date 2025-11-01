@@ -40,13 +40,13 @@
                                 </span>
                             @endif
 
-                            @if($product->stock <= 0)
+                            @if($product->stock_quantity <= 0)
                                 <span class="badge bg-secondary position-absolute top-0 end-0 m-3">
                                     نفذت الكمية
                                 </span>
                             @endif
 
-                            <img src="{{ asset('storage/' . $product->image) }}"
+                            <img src="{{ asset('storage/' . $product->image_path) }}"
                                  class="card-img-top"
                                  alt="{{ $product->name_ar }}"
                                  style="height: 250px; object-fit: cover;">
@@ -82,7 +82,7 @@
                                         <i class="fas fa-eye ms-1"></i> عرض
                                     </a>
 
-                                    @if($product->stock > 0)
+                                    @if($product->stock_quantity > 0)
                                         <button class="btn btn-success flex-grow-1"
                                                 onclick="addToCart({{ $product->id }})">
                                             <i class="fas fa-cart-plus ms-1"></i> إضافة
@@ -113,7 +113,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="section-testimonials py-5 bg-light">
+    <section class="section-testimonials py-5">
         <div class="container">
             <div class="section-header text-center mb-5">
                 <h2 class="fw-bold">آراء عملائنا</h2>
@@ -201,7 +201,7 @@
     </section>
 
     <!-- Blog Posts Preview -->
-    <section class="section-blog-preview py-5 bg-light">
+    <section class="section-blog-preview py-5">
         <div class="container">
             <div class="section-header text-center mb-5">
                 <h2 class="fw-bold">أحدث المقالات</h2>
@@ -228,7 +228,7 @@
                                 <div class="blog-meta mb-3 text-muted small">
                                     <span class="me-3">
                                         <i class="fas fa-calendar ms-1"></i>
-                                        {{ $post->published_at }}
+                                        {{ $post->published_at?->format('d M Y') }}
                                     </span>
                                     @if($post->author)
                                         <span>

@@ -15,7 +15,7 @@
 
             <div class="row">
                 <div class="col-lg-6 mb-4">
-                    <img src="{{ asset('storage/' . $product->image) }}"
+                    <img src="{{ asset('storage/' . $product->image_path) }}"
                          alt="{{ $product->name_ar }}"
                          class="img-fluid rounded shadow">
                 </div>
@@ -38,9 +38,9 @@
                         <p class="text-muted">{{ $product->description_ar }}</p>
                     </div>
 
-                    @if($product->stock > 0)
+                    @if($product->stock_quantity > 0)
                         <div class="mb-3">
-                            <span class="badge bg-success">متوفر في المخزون ({{ $product->stock }} قطعة)</span>
+                            <span class="badge bg-success">متوفر في المخزون ({{ $product->stock_quantity }} قطعة)</span>
                         </div>
                     @else
                         <div class="mb-3">
@@ -48,7 +48,7 @@
                         </div>
                     @endif
 
-                    @if($product->stock > 0)
+                    @if($product->stock_quantity > 0)
                         <div class="d-flex gap-2 mb-4">
                             <button class="btn btn-success btn-lg flex-grow-1" onclick="addToCart({{ $product->id }})">
                                 <i class="fas fa-cart-plus ms-2"></i>

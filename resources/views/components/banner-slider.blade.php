@@ -13,7 +13,7 @@
     <div class="carousel-inner">
         @foreach($banners as $index => $banner)
             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                <img src="{{ asset('storage/' . $banner->image) }}" class="d-block w-100" alt="{{ $banner->title_ar }}" style="height: 500px; object-fit: cover;">
+                <img src="{{ asset('storage/' . $banner->image) }}" class="d-block w-100" alt="{{ $banner->title_ar }}" style="height: 800px; object-fit: cover;">
                 <div class="carousel-caption d-none d-md-block">
                     <div class="bg-dark bg-opacity-50 p-4 rounded">
                         <h2 class="display-4 fw-bold text-white">{{ $banner->title_ar }}</h2>

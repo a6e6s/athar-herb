@@ -22,6 +22,7 @@ class BannerForm
                     ->default(null)
                     ->columnSpanFull(),
                 FileUpload::make('image')
+                ->disk('public')
                     ->image(),
                 TextInput::make('link_url')
                     ->url()
