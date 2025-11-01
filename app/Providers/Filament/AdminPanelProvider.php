@@ -12,6 +12,7 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Enums\Width;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -31,29 +32,36 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Blue,
+                'primary' => Color::Indigo,
                 'danger' => Color::Red,
                 'gray' => Color::Gray,
                 'info' => Color::Blue,
                 'success' => Color::Green,
                 'warning' => Color::Yellow,
             ])
+
+            ->maxContentWidth(Width::Full)
+            ->sidebarCollapsibleOnDesktop()
+            ->sidebarFullyCollapsibleOnDesktop()
             ->brandName('Athar Herb')
             ->favicon(asset('favicon.ico'))
             ->brandLogo(asset('images/logo.png'))
+            ->brandLogoHeight('40px')
             ->renderHook('panels::topbar.end', fn() => view('filament.language-switcher'))
-            ->renderHook(
-                'panels::styles.before',
-                fn() => app()->getLocale() === 'ar'
-                    ? '<link rel="stylesheet" href="' . \Illuminate\Support\Facades\Vite::asset('resources/css/filament-rtl.css') . '">'
-                    : ''
-            )
-            ->renderHook(
-                'panels::head.end',
-                fn() => app()->getLocale() === 'ar'
-                    ? '<script>document.documentElement.setAttribute("dir", "rtl");</script>'
-                    : '<script>document.documentElement.setAttribute("dir", "ltr");</script>'
-            )
+            ->font('Cairo')
+            // the below code snippets are wrong and no need to add them
+            // ->renderHook(
+            //     'panels::styles.before',
+            //     fn() => app()->getLocale() === 'ar'
+            //         ? '<link rel="stylesheet" href="' . \Illuminate\Support\Facades\Vite::asset('resources/css/filament-rtl.css') . '">'
+            //         : ''
+            // )
+            // ->renderHook(
+            //     'panels::head.end',
+            //     fn() => app()->getLocale() === 'ar'
+            //         ? '<script>document.documentElement.setAttribute("dir", "rtl");</script>'
+            //         : '<script>document.documentElement.setAttribute("dir", "ltr");</script>'
+            // )
             ->navigationGroups([
                 __('filament.navigation.groups.e-commerce'),
                 __('filament.navigation.groups.content'),

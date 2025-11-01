@@ -22,9 +22,29 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    public static function getNavigationGroup(): ?string
+    {
+        return __('filament.navigation.groups.roles-permissions');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.resources.users.navigation_label');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament.resources.users.label');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament.resources.users.plural_label');
+    }
 
     public static function form(Schema $schema): Schema
     {

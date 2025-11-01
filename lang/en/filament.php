@@ -5,6 +5,7 @@ return [
         'groups' => [
             'e-commerce' => 'E-commerce',
             'content' => 'Content',
+            'roles-permissions' => 'Roles & Permissions',
         ],
     ],
 
@@ -13,12 +14,41 @@ return [
             'label' => 'Product',
             'plural_label' => 'Products',
             'navigation_label' => 'Products',
+
+            'tabs' => [
+                'general' => 'General Information',
+                'pricing' => 'Pricing',
+                'inventory' => 'Inventory',
+                'media' => 'Media',
+                'settings' => 'Settings',
+            ],
+
+            'sections' => [
+                'basic_information' => 'Basic Information',
+                'basic_information_desc' => 'Enter the basic product details',
+                'description' => 'Description',
+                'description_desc' => 'Detailed product description',
+                'pricing' => 'Pricing',
+                'pricing_desc' => 'Manage product pricing',
+                'stock' => 'Stock Management',
+                'stock_desc' => 'Track product inventory and quantities',
+                'images' => 'Images',
+                'images_desc' => 'Upload product images',
+                'visibility' => 'Visibility & Status',
+                'visibility_desc' => 'Control product visibility and status',
+                'product_info' => 'Product Information',
+                'pricing_info' => 'Pricing Information',
+                'inventory_info' => 'Inventory Information',
+                'media_info' => 'Media',
+                'status_info' => 'Status & Visibility',
+            ],
+
             'fields' => [
                 'category_id' => 'Category',
-                'name' => 'Name',
+                'name' => 'Product Name',
                 'slug' => 'Slug',
                 'short_description' => 'Short Description',
-                'description' => 'Description',
+                'description' => 'Full Description',
                 'price' => 'Price',
                 'cost_price' => 'Cost Price',
                 'sku' => 'SKU',
@@ -27,13 +57,71 @@ return [
                 'weight' => 'Weight',
                 'unit_of_measure' => 'Unit of Measure',
                 'expiration_date' => 'Expiration Date',
-                'image_path' => 'Image',
-                'secondary_images' => 'Secondary Images',
-                'is_active' => 'Is Active',
-                'is_featured' => 'Is Featured',
+                'image_path' => 'Main Image',
+                'secondary_images' => 'Additional Images',
+                'is_active' => 'Active',
+                'is_featured' => 'Featured Product',
                 'created_at' => 'Created At',
                 'updated_at' => 'Updated At',
                 'deleted_at' => 'Deleted At',
+                'stock_status' => 'Stock Status',
+                'profit_margin' => 'Profit Margin',
+            ],
+
+            'placeholders' => [
+                'name' => 'Enter product name',
+                'slug' => 'Auto-generated from name',
+                'short_description' => 'Brief description shown in product listings',
+                'description' => 'Detailed product description',
+                'category' => 'Select product category',
+                'sku' => 'e.g., PRD-001',
+                'unit_of_measure' => 'e.g., piece, kg, box',
+                'expiration_date' => 'Select date',
+            ],
+
+            'helpers' => [
+                'slug' => 'Used in product URL. Must be unique.',
+                'sku' => 'Unique code to identify the product in inventory.',
+                'short_description' => 'Maximum 500 characters. Shown in search and product listings.',
+                'price' => 'Selling price for customers',
+                'cost_price' => 'Purchase or cost price (optional)',
+                'stock_quantity' => 'Current number available in stock',
+                'low_stock_threshold' => 'Alert will be triggered when stock reaches this number',
+                'weight' => 'Weight in kilograms (optional)',
+                'unit_of_measure' => 'Unit of sale: piece, kg, box, etc.',
+                'expiration_date' => 'Product expiration date (optional)',
+                'image_path' => 'Main image shown in listings. Maximum 2MB',
+                'secondary_images' => 'Additional product images. Maximum 5 images, 2MB each',
+                'is_active' => 'If inactive, the product won\'t be visible to customers',
+                'is_featured' => 'Will be shown in the featured products section',
+            ],
+
+            'filters' => [
+                'active' => 'Active',
+                'inactive' => 'Inactive',
+                'featured' => 'Featured',
+                'in_stock' => 'In Stock',
+                'low_stock' => 'Low Stock',
+                'out_of_stock' => 'Out of Stock',
+                'stock_status' => 'Stock Status',
+                'category' => 'Category',
+                'price_range' => 'Price Range',
+            ],
+
+            'badges' => [
+                'featured' => 'Featured',
+                'new' => 'New',
+                'low_stock' => 'Low Stock',
+                'out_of_stock' => 'Out of Stock',
+            ],
+
+            'actions' => [
+                'view' => 'View',
+                'edit' => 'Edit',
+                'delete' => 'Delete',
+                'duplicate' => 'Duplicate',
+                'activate' => 'Activate',
+                'deactivate' => 'Deactivate',
             ],
         ],
 
@@ -186,6 +274,58 @@ return [
                 'created_at' => 'Created At',
                 'updated_at' => 'Updated At',
                 'deleted_at' => 'Deleted At',
+            ],
+        ],
+
+        'users' => [
+            'label' => 'User',
+            'plural_label' => 'Users',
+            'navigation_label' => 'Users',
+            'navigation_group' => 'Roles & Permissions',
+
+            'fields' => [
+                'name' => 'Name',
+                'email' => 'Email Address',
+                'email_verified_at' => 'Email Verified At',
+                'password' => 'Password',
+                'created_at' => 'Created At',
+                'updated_at' => 'Updated At',
+                'deleted_at' => 'Deleted At',
+            ],
+
+            'placeholders' => [
+                'name' => 'Enter full name',
+                'email' => 'user@example.com',
+                'password' => 'Enter a strong password',
+            ],
+
+            'helpers' => [
+                'email' => 'This email will be used for login',
+                'password' => 'Password must be at least 8 characters',
+                'email_verified_at' => 'Date when email was verified',
+            ],
+
+            'actions' => [
+                'verify_email' => 'Verify Email',
+                'reset_password' => 'Reset Password',
+                'view' => 'View',
+                'edit' => 'Edit',
+                'delete' => 'Delete',
+                'restore' => 'Restore',
+                'force_delete' => 'Force Delete',
+            ],
+
+            'filters' => [
+                'verified' => 'Verified',
+                'unverified' => 'Unverified',
+                'trashed' => 'Trashed',
+            ],
+
+            'badges' => [
+                'verified' => 'Verified',
+                'unverified' => 'Unverified',
+                'active' => 'Active',
+                'inactive' => 'Inactive',
             ],
         ],
     ],

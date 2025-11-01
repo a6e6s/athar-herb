@@ -40,6 +40,10 @@ class RoleResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    public static function getNavigationGroup(): ?string
+    {
+        return __('filament.navigation.groups.roles-permissions');
+    }
     public static function form(Schema $schema): Schema
     {
         return $schema
