@@ -312,9 +312,19 @@ function setupDarkMode() {
     const darkModeToggle = document.getElementById('darkModeToggle');
     if (!darkModeToggle) return;
 
-    // Check for saved dark mode preference
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (savedDarkMode) {
+    // Check for saved dark mode preference or system preference
+    const savedDarkMode = localStorage.getItem('darkMode');
+    let isDarkMode = false;
+
+    if (savedDarkMode !== null) {
+        // Use saved preference if exists
+        isDarkMode = savedDarkMode === 'true';
+    } else {
+        // Check system preference
+        isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    if (isDarkMode) {
         document.body.classList.add('dark-mode');
         darkMode = true;
         updateDarkModeIcon();
@@ -326,6 +336,22 @@ function setupDarkMode() {
         localStorage.setItem('darkMode', darkMode);
         updateDarkModeIcon();
     });
+
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            // Only apply system preference if user hasn't manually set a preference
+            if (localStorage.getItem('darkMode') === null) {
+                darkMode = e.matches;
+                if (darkMode) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+                updateDarkModeIcon();
+            }
+        });
+    }
 }
 
 function updateDarkModeIcon() {

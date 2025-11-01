@@ -783,6 +783,243 @@ body.dark-mode {
     --border-color: rgba(229, 229, 229, 0.15);
 }
 
+/* Dark Mode - Navbar */
+body.dark-mode .navbar {
+    background-color: var(--surface-color) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .navbar-brand {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .nav-link {
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .btn-outline-secondary,
+body.dark-mode .btn-outline-success,
+body.dark-mode .btn-outline-danger,
+body.dark-mode .btn-outline-primary {
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-secondary);
+}
+
+body.dark-mode .btn-outline-success:hover {
+    background-color: rgba(74, 222, 128, 0.2);
+    border-color: #4ade80;
+}
+
+body.dark-mode .btn-outline-danger:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+}
+
+/* Dark Mode - Cards */
+body.dark-mode .card {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .product-card,
+body.dark-mode .blog-card,
+body.dark-mode .category-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode .card-title,
+body.dark-mode .card-text {
+    color: var(--text-color);
+}
+
+body.dark-mode .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+/* Dark Mode - Badges */
+body.dark-mode .badge {
+    background-color: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+}
+
+body.dark-mode .badge.bg-danger {
+    background-color: rgba(239, 68, 68, 0.2) !important;
+    color: #ef4444 !important;
+}
+
+body.dark-mode .badge.bg-success {
+    background-color: rgba(74, 222, 128, 0.2) !important;
+    color: #4ade80 !important;
+}
+
+/* Dark Mode - Buttons */
+body.dark-mode .btn-success {
+    background-color: #4ade80;
+    border-color: #4ade80;
+    color: #1a1a1a;
+}
+
+body.dark-mode .btn-success:hover {
+    background-color: #22c55e;
+    border-color: #22c55e;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Dark Mode - Forms */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    background-color: var(--surface-color);
+    border-color: #4ade80;
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem rgba(74, 222, 128, 0.25);
+}
+
+body.dark-mode .form-label {
+    color: var(--text-color);
+}
+
+/* Dark Mode - Modals */
+body.dark-mode .modal-content {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-footer {
+    border-color: var(--border-color);
+}
+
+body.dark-mode .modal-title {
+    color: var(--text-color);
+}
+
+/* Dark Mode - Dropdowns */
+body.dark-mode .dropdown-menu {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .dropdown-item {
+    color: var(--text-color);
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+body.dark-mode .dropdown-divider {
+    border-color: var(--border-color);
+}
+
+/* Dark Mode - Footer */
+body.dark-mode footer {
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode footer h5 {
+    color: var(--text-color);
+}
+
+body.dark-mode footer a {
+    color: var(--text-secondary);
+}
+
+body.dark-mode footer a:hover {
+    color: #4ade80;
+}
+
+/* Dark Mode - Sections */
+body.dark-mode .section-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+body.dark-mode .section-features,
+body.dark-mode .section-products,
+body.dark-mode .section-blog {
+    background-color: var(--bg-color);
+}
+
+/* Dark Mode - Toast */
+body.dark-mode .toast {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .toast-header {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Dark Mode - Accordion */
+body.dark-mode .accordion-item {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .accordion-button {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+    background-color: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+}
+
+body.dark-mode .accordion-body {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+}
+
+/* Dark Mode - Scroll to Top */
+body.dark-mode #scrollToTop {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode #scrollToTop:hover {
+    background-color: #4ade80;
+    color: #1a1a1a;
+}
+
 /* Base Styles */
 * {
     margin: 0;
@@ -1093,6 +1330,144 @@ p {
 /* Testimonials */
 .section-testimonials {
     background: var(--bg-cream);
+}
+
+body.dark-mode .section-testimonials {
+    background: var(--surface-color);
+}
+
+/* Dark Mode - Price and Currency */
+body.dark-mode .product-price,
+body.dark-mode .price {
+    color: #4ade80;
+}
+
+body.dark-mode .product-price-old {
+    color: var(--text-secondary);
+}
+
+/* Dark Mode - Links */
+body.dark-mode a {
+    color: #4ade80;
+}
+
+body.dark-mode a:hover {
+    color: #22c55e;
+}
+
+/* Dark Mode - Breadcrumb */
+body.dark-mode .breadcrumb {
+    background-color: var(--surface-color);
+}
+
+body.dark-mode .breadcrumb-item a {
+    color: #4ade80;
+}
+
+body.dark-mode .breadcrumb-item.active {
+    color: var(--text-secondary);
+}
+
+/* Dark Mode - Pagination */
+body.dark-mode .pagination .page-link {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .pagination .page-link:hover {
+    background-color: rgba(74, 222, 128, 0.1);
+    border-color: #4ade80;
+    color: #4ade80;
+}
+
+body.dark-mode .pagination .page-item.active .page-link {
+    background-color: #4ade80;
+    border-color: #4ade80;
+    color: #1a1a1a;
+}
+
+/* Dark Mode - Tables */
+body.dark-mode table {
+    color: var(--text-color);
+}
+
+body.dark-mode .table {
+    border-color: var(--border-color);
+}
+
+body.dark-mode .table > :not(caption) > * > * {
+    background-color: var(--surface-color);
+    border-bottom-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+body.dark-mode .table-hover > tbody > tr:hover > * {
+    background-color: rgba(74, 222, 128, 0.05);
+}
+
+/* Dark Mode - Alerts */
+body.dark-mode .alert {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .alert-success {
+    background-color: rgba(74, 222, 128, 0.1);
+    border-color: rgba(74, 222, 128, 0.3);
+    color: #4ade80;
+}
+
+body.dark-mode .alert-danger {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+body.dark-mode .alert-warning {
+    background-color: rgba(251, 191, 36, 0.1);
+    border-color: rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
+body.dark-mode .alert-info {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: #3b82f6;
+}
+
+/* Dark Mode - List Groups */
+body.dark-mode .list-group-item {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .list-group-item.active {
+    background-color: #4ade80;
+    border-color: #4ade80;
+    color: #1a1a1a;
+}
+
+/* Dark Mode - Input Groups */
+body.dark-mode .input-group-text {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Dark Mode - Spinner */
+body.dark-mode .spinner-border {
+    color: #4ade80;
 }
 
 body.dark-mode .section-testimonials {

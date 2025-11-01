@@ -25,14 +25,16 @@
         body {
             font-family: 'Cairo', sans-serif;
             padding-top: 80px; /* Space for fixed navbar */
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .navbar {
             box-shadow: 0 2px 4px rgba(0,0,0,.08);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .product-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .product-card:hover {
@@ -41,7 +43,7 @@
         }
 
         .testimonial-card {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .testimonial-card:hover {
@@ -49,7 +51,7 @@
         }
 
         .blog-card {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .blog-card:hover {
@@ -60,6 +62,24 @@
             width: 50px;
             height: 50px;
             padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        #scrollToTop:hover {
+            transform: scale(1.1);
+        }
+
+        .card, .btn, .form-control, .form-select, .modal-content, .dropdown-menu, .alert {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Smooth transition for dark mode toggle button */
+        #darkModeToggle i {
+            transition: transform 0.3s ease;
+        }
+
+        #darkModeToggle:hover i {
+            transform: rotate(20deg);
         }
     </style>
 
