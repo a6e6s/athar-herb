@@ -456,30 +456,58 @@ return [
             'navigation_label' => 'المستخدمون',
             'navigation_group' => 'الأدوار والصلاحيات',
 
+            'tabs' => [
+                'basic_info' => 'المعلومات الأساسية',
+                'security' => 'الأمان',
+                'all_users' => 'جميع المستخدمين',
+                'verified' => 'مُتحقق منهم',
+                'unverified' => 'غير مُتحقق منهم',
+                'this_week' => 'هذا الأسبوع',
+                'this_month' => 'هذا الشهر',
+            ],
+
+            'sections' => [
+                'account_details' => 'تفاصيل الحساب',
+                'account_details_desc' => 'المعلومات الأساسية للمستخدم',
+                'password_security' => 'كلمة المرور والأمان',
+                'password_security_desc' => 'إدارة كلمة المرور وإعدادات الأمان',
+                'user_overview' => 'نظرة عامة على المستخدم',
+                'user_overview_desc' => 'المعلومات الأساسية والحالة',
+                'account_info' => 'معلومات الحساب',
+                'account_info_desc' => 'تواريخ التحقق والنشاط',
+                'system_info' => 'معلومات النظام',
+                'system_info_desc' => 'معلومات تقنية ومعرفات',
+            ],
+
             'fields' => [
+                'id' => 'المعرف',
                 'name' => 'الاسم',
                 'email' => 'البريد الإلكتروني',
-                'email_verified_at' => 'تم التحقق من البريد الإلكتروني',
+                'email_verified_at' => 'تاريخ التحقق من البريد',
+                'verified' => 'التحقق',
+                'status' => 'الحالة',
                 'password' => 'كلمة المرور',
+                'password_confirmation' => 'تأكيد كلمة المرور',
                 'created_at' => 'تاريخ الإنشاء',
                 'updated_at' => 'تاريخ التحديث',
                 'deleted_at' => 'تاريخ الحذف',
             ],
 
             'placeholders' => [
-                'name' => 'أدخل اسم المستخدم الكامل',
+                'name' => 'أدخل الاسم الكامل',
                 'email' => 'user@example.com',
-                'password' => 'أدخل كلمة مرور قوية',
+                'password' => 'أدخل كلمة مرور قوية (8 أحرف على الأقل)',
+                'password_confirmation' => 'أعد إدخال كلمة المرور',
             ],
 
             'helpers' => [
-                'email' => 'سيتم استخدام هذا البريد الإلكتروني لتسجيل الدخول',
-                'password' => 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل',
-                'email_verified_at' => 'تاريخ التحقق من البريد الإلكتروني',
+                'email' => 'سيتم استخدام هذا البريد الإلكتروني لتسجيل الدخول. يجب أن يكون فريداً.',
+                'password' => 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل. استخدم مزيجاً من الأحرف والأرقام والرموز.',
+                'email_verified_at' => 'التاريخ والوقت الذي تم فيه التحقق من البريد الإلكتروني للمستخدم.',
             ],
 
             'actions' => [
-                'verify_email' => 'التحقق من البريد الإلكتروني',
+                'verify_email' => 'التحقق من البريد',
                 'reset_password' => 'إعادة تعيين كلمة المرور',
                 'view' => 'عرض',
                 'edit' => 'تحرير',
@@ -489,16 +517,29 @@ return [
             ],
 
             'filters' => [
-                'verified' => 'تم التحقق منه',
-                'unverified' => 'لم يتم التحقق منه',
-                'trashed' => 'المحذوف',
+                'verification_status' => 'حالة التحقق',
+                'verified' => 'مُتحقق منه',
+                'unverified' => 'غير مُتحقق منه',
+                'trashed' => 'المحذوفون',
+                'created_this_month' => 'تم الإنشاء هذا الشهر',
+                'created_this_week' => 'تم الإنشاء هذا الأسبوع',
             ],
 
             'badges' => [
-                'verified' => 'تم التحقق',
-                'unverified' => 'لم يتم التحقق',
+                'verified' => 'مُتحقق منه',
+                'unverified' => 'غير مُتحقق منه',
                 'active' => 'نشط',
                 'inactive' => 'غير نشط',
+            ],
+
+            'messages' => [
+                'copied' => 'تم النسخ!',
+                'email_copied' => 'تم نسخ البريد الإلكتروني!',
+            ],
+
+            'empty_state' => [
+                'heading' => 'لا يوجد مستخدمون',
+                'description' => 'ابدأ بإنشاء مستخدم جديد.',
             ],
         ],
     ],

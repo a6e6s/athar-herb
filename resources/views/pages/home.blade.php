@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'عطار الأعشاب - منتجات عشبية طبيعية')
+@section('title', env('APP_NAME') . ' - منتجات عشبية طبيعية')
 
 @push('styles')
 <style>
@@ -271,7 +271,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="fw-bold mb-4">من نحن</h2>
-                    <p class="lead text-success">عطار الأعشاب هو متجرك الموثوق للمنتجات العشبية والطبيعية عالية الجودة</p>
+                    <p class="lead text-success">أثر الأعشاب هو متجرك الموثوق للمنتجات العشبية والطبيعية عالية الجودة</p>
                     <p class="text-muted">
                         نحن نؤمن بقوة الطبيعة في تحسين الصحة والعافية. نقدم لكم منتجات مختارة بعناية من أجود المصادر الطبيعية،
                         مع الالتزام بأعلى معايير الجودة والنقاء.
@@ -312,7 +312,7 @@
 
                 <div class="col-lg-6 text-center">
                     <img src="{{ asset('images/logo.png') }}"
-                         alt="عطار الأعشاب"
+                         alt="أثر الأعشاب"
                          class="img-fluid rounded shadow"
                          style="max-width: 400px;">
                 </div>

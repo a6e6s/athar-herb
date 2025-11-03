@@ -1520,7 +1520,7 @@ body.dark-mode .section-testimonials {
 }
 
 .accordion-button::after {
-    margin-left: auto;
+    /* margin-left: auto; */
 }
 
 /* Blog Preview */
