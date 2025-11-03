@@ -27,6 +27,7 @@ class PostForm
                     ->required()
                     ->columnSpanFull(),
                 FileUpload::make('featured_image')
+                    ->disk('public')
                     ->image(),
                 TextInput::make('meta_title')
                     ->default(null),

@@ -50,18 +50,19 @@ class UsersTable
                     ->copyMessageDuration(1500)
                     ->toggleable(),
 
-                IconColumn::make('email_verified_at')
-                    ->label(__('filament.resources.users.fields.verified'))
-                    ->boolean()
-                    ->trueIcon('heroicon-o-check-badge')
-                    ->falseIcon('heroicon-o-x-circle')
-                    ->trueColor('success')
-                    ->falseColor('danger')
+                TextColumn::make('user_type')
+                    ->label(__('filament.resources.users.fields.user_type'))
+                    ->badge()
                     ->sortable()
-                    ->tooltip(fn ($record) => $record->email_verified_at
-                        ? __('filament.resources.users.badges.verified') . ': ' . $record->email_verified_at->format('Y-m-d H:i')
-                        : __('filament.resources.users.badges.unverified'))
-                    ->alignCenter(),
+                    ->searchable()
+                    ->toggleable(),
+
+                IconColumn::make('is_active')
+                    ->label(__('filament.resources.users.fields.is_active'))
+                    ->boolean()
+                    ->sortable()
+                    ->toggleable(),
+
 
                 TextColumn::make('created_at')
                     ->label(__('filament.resources.users.fields.created_at'))
@@ -90,13 +91,31 @@ class UsersTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                SelectFilter::make('user_type')
+                    ->label(__('filament.resources.users.filters.user_type'))
+                    ->options([
+                        'customer' => __('filament.resources.users.user_types.customer'),
+                        'admin' => __('filament.resources.users.user_types.admin'),
+                        'manager' => __('filament.resources.users.user_types.manager'),
+                        'support' => __('filament.resources.users.user_types.support'),
+                    ])
+                    ->native(false),
+
+                SelectFilter::make('is_active')
+                    ->label(__('filament.resources.users.filters.status'))
+                    ->options([
+                        '1' => __('filament.resources.users.badges.active'),
+                        '0' => __('filament.resources.users.badges.inactive'),
+                    ])
+                    ->native(false),
+
                 SelectFilter::make('email_verified')
                     ->label(__('filament.resources.users.filters.verification_status'))
                     ->options([
                         'verified' => __('filament.resources.users.badges.verified'),
                         'unverified' => __('filament.resources.users.badges.unverified'),
                     ])
-                    ->query(fn (Builder $query, array $data): Builder => 
+                    ->query(fn (Builder $query, array $data): Builder =>
                         match ($data['value'] ?? null) {
                             'verified' => $query->whereNotNull('email_verified_at'),
                             'unverified' => $query->whereNull('email_verified_at'),
@@ -117,7 +136,6 @@ class UsersTable
                 TrashedFilter::make()
                     ->label(__('filament.resources.users.filters.trashed')),
             ])
-            ->filtersLayout(FiltersLayout::Dropdown)
             ->recordActions([
                 ViewAction::make()
                     ->label(__('filament.resources.users.actions.view'))

@@ -2,8 +2,11 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
+use App\Enums\UserType;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
@@ -54,13 +57,24 @@ class UserForm
                                             ->native(false)
                                             ->prefixIcon('heroicon-o-shield-check')
                                             ->columnSpan(2),
-                                    ]),
-                            ]),
 
-                        // Security Tab
-                        Tab::make(__('filament.resources.users.tabs.security'))
-                            ->icon('heroicon-o-lock-closed')
-                            ->schema([
+                                        Select::make('user_type')
+                                            ->label(__('filament.resources.users.fields.user_type'))
+                                            ->options(UserType::class)
+                                            ->default(UserType::CUSTOMER->value)
+                                            ->required()
+                                            ->native(false)
+                                            ->prefixIcon('heroicon-o-user-group')
+                                            ->helperText(__('filament.resources.users.helpers.user_type'))
+                                            ->columnSpan(1),
+
+                                        Toggle::make('is_active')
+                                            ->label(__('filament.resources.users.fields.is_active'))
+                                            ->default(true)
+                                            ->inline(false)
+                                            ->helperText(__('filament.resources.users.helpers.is_active'))
+                                            ->columnSpan(1),
+                                    ]),
                                 Section::make(__('filament.resources.users.sections.password_security'))
                                     ->description(__('filament.resources.users.sections.password_security_desc'))
                                     ->icon('heroicon-o-key')
@@ -72,12 +86,12 @@ class UserForm
                                             ->placeholder(__('filament.resources.users.placeholders.password'))
                                             ->password()
                                             ->revealable()
-                                            ->required(fn (string $context): bool => $context === 'create')
+                                            ->required(fn(string $context): bool => $context === 'create')
                                             ->minLength(8)
                                             ->prefixIcon('heroicon-o-lock-closed')
                                             ->helperText(__('filament.resources.users.helpers.password'))
-                                            ->dehydrated(fn ($state) => filled($state))
-                                            ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                                            ->dehydrated(fn($state) => filled($state))
+                                            ->dehydrateStateUsing(fn($state) => Hash::make($state))
                                             ->columnSpan(1),
 
                                         TextInput::make('password_confirmation')
@@ -85,7 +99,7 @@ class UserForm
                                             ->placeholder(__('filament.resources.users.placeholders.password_confirmation'))
                                             ->password()
                                             ->revealable()
-                                            ->required(fn (string $context): bool => $context === 'create')
+                                            ->required(fn(string $context): bool => $context === 'create')
                                             ->minLength(8)
                                             ->prefixIcon('heroicon-o-lock-closed')
                                             ->same('password')

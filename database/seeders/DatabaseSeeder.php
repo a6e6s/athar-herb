@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserType;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Product;
@@ -26,15 +27,17 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@athar-herb.com',
             'password' => bcrypt('password'),
             'email_verified_at' => now(),
+            'is_active' => true,
+            'user_type' => UserType::ADMIN,
         ]);
 
         // Create Sample Users
         $users = [
-            ['name' => 'أحمد محمد', 'email' => 'ahmed@example.com'],
-            ['name' => 'فاطمة علي', 'email' => 'fatima@example.com'],
-            ['name' => 'محمد خالد', 'email' => 'mohammed@example.com'],
-            ['name' => 'سارة عبدالله', 'email' => 'sarah@example.com'],
-            ['name' => 'عمر حسن', 'email' => 'omar@example.com'],
+            ['name' => 'أحمد محمد', 'email' => 'ahmed@example.com', 'user_type' => UserType::CUSTOMER, 'is_active' => true],
+            ['name' => 'فاطمة علي', 'email' => 'fatima@example.com', 'user_type' => UserType::CUSTOMER, 'is_active' => true],
+            ['name' => 'محمد خالد', 'email' => 'mohammed@example.com', 'user_type' => UserType::MANAGER, 'is_active' => true],
+            ['name' => 'سارة عبدالله', 'email' => 'sarah@example.com', 'user_type' => UserType::SUPPORT, 'is_active' => true],
+            ['name' => 'عمر حسن', 'email' => 'omar@example.com', 'user_type' => UserType::CUSTOMER, 'is_active' => false],
         ];
 
         foreach ($users as $userData) {
@@ -43,6 +46,8 @@ class DatabaseSeeder extends Seeder
                 'email' => $userData['email'],
                 'password' => bcrypt('password'),
                 'email_verified_at' => now(),
+                'is_active' => $userData['is_active'],
+                'user_type' => $userData['user_type'],
             ]);
         }
 

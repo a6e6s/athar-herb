@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\UserType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -9,7 +10,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, SoftDeletes,HasRoles;
+    use HasFactory, SoftDeletes, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +23,8 @@ class User extends Authenticatable
         'email_verified_at',
         'password',
         'role',
+        'is_active',
+        'user_type',
     ];
 
     /**
@@ -44,6 +47,8 @@ class User extends Authenticatable
         return [
             'id' => 'integer',
             'email_verified_at' => 'timestamp',
+            'is_active' => 'boolean',
+            'user_type' => UserType::class,
         ];
     }
 }

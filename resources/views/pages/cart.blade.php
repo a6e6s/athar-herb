@@ -7,6 +7,7 @@
         <div class="container">
             <h1 class="fw-bold mb-4">سلة التسوق</h1>
             <p>سلة التسوق فارغة</p>
+            @dump($cartItems)
         </div>
     </section>
 @endsection

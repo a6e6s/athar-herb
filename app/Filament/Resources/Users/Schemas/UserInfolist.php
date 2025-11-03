@@ -53,6 +53,21 @@ class UserInfolist
                     ->icon('heroicon-o-shield-check')
                     ->columns(3)
                     ->schema([
+                        TextEntry::make('user_type')
+                            ->label(__('filament.resources.users.fields.user_type'))
+                            ->badge()
+                            ->icon('heroicon-m-user-group')
+                            ->columnSpan(1),
+
+                        IconEntry::make('is_active')
+                            ->label(__('filament.resources.users.fields.is_active'))
+                            ->boolean()
+                            ->trueIcon('heroicon-o-check-circle')
+                            ->falseIcon('heroicon-o-x-circle')
+                            ->trueColor('success')
+                            ->falseColor('danger')
+                            ->columnSpan(1),
+
                         TextEntry::make('email_verified_at')
                             ->label(__('filament.resources.users.fields.email_verified_at'))
                             ->dateTime('Y-m-d H:i:s')
@@ -82,7 +97,7 @@ class UserInfolist
                             ->columnSpan(1),
                     ]),
 
-                // System Information Section  
+                // System Information Section
                 Section::make(__('filament.resources.users.sections.system_info'))
                     ->description(__('filament.resources.users.sections.system_info_desc'))
                     ->icon('heroicon-o-computer-desktop')
