@@ -78,15 +78,24 @@ class ProductInfolist
                 // Pricing
                 TextEntry::make('price')
                     ->label(__('filament.resources.products.fields.price'))
-                    ->money('USD')
+                    ->money('SAR')
                     ->weight('bold')
                     ->size('lg')
                     ->color('success')
                     ->icon('heroicon-m-currency-dollar'),
 
+                TextEntry::make('discount_price')
+                    ->label(__('filament.resources.products.fields.discount_price'))
+                    ->money('SAR')
+                    ->placeholder('-')
+                    ->weight('bold')
+                    ->color('warning')
+                    ->icon('heroicon-m-tag')
+                    ->badge(),
+
                 TextEntry::make('cost_price')
                     ->label(__('filament.resources.products.fields.cost_price'))
-                    ->money('USD')
+                    ->money('SAR')
                     ->placeholder('-')
                     ->icon('heroicon-m-calculator')
                     ->color('gray'),
@@ -94,8 +103,9 @@ class ProductInfolist
                 TextEntry::make('profit_margin')
                     ->label(__('filament.resources.products.fields.profit_margin'))
                     ->state(function ($record) {
-                        if ($record->cost_price && $record->price > 0) {
-                            $margin = (($record->price - $record->cost_price) / $record->price) * 100;
+                        $effectivePrice = $record->discount_price ?? $record->price;
+                        if ($record->cost_price && $effectivePrice > 0) {
+                            $margin = (($effectivePrice - $record->cost_price) / $effectivePrice) * 100;
                             return number_format($margin, 1) . '%';
                         }
                         return '-';

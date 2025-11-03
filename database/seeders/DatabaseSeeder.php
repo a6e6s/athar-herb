@@ -377,6 +377,10 @@ class DatabaseSeeder extends Seeder
             'published_at' => now(),
         ]);
 
+        // Seed Orders
+        $this->command->info('Seeding orders...');
+        $this->call(OrderSeeder::class);
+
         $this->command->info('Database seeded successfully!');
     }
 }

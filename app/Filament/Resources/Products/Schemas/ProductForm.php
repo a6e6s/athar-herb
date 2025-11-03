@@ -146,22 +146,38 @@ class ProductForm
                                 Section::make(__('filament.resources.products.sections.pricing'))
                                     ->description(__('filament.resources.products.sections.pricing_desc'))
                                     ->icon('heroicon-o-banknotes')
-                                    ->columns(2)
+                                    ->columns(3)
                                     ->schema([
                                         TextInput::make('price')
                                             ->label(__('filament.resources.products.fields.price'))
                                             ->required()
                                             ->numeric()
-                                            ->prefix('$')
+                                            ->prefix('SAR')
                                             ->minValue(0)
                                             ->step(0.01)
                                             ->placeholder('0.00')
                                             ->helperText(__('filament.resources.products.helpers.price')),
 
+                                        TextInput::make('discount_price')
+                                            ->label(__('filament.resources.products.fields.discount_price'))
+                                            ->numeric()
+                                            ->prefix('SAR')
+                                            ->minValue(0)
+                                            ->step(0.01)
+                                            ->placeholder('0.00')
+                                            ->helperText(__('filament.resources.products.helpers.discount_price'))
+                                            ->live()
+                                            ->afterStateUpdated(function ($state, callable $set, callable $get) {
+                                                $price = $get('price');
+                                                if ($state && $price && $state >= $price) {
+                                                    $set('discount_price', null);
+                                                }
+                                            }),
+
                                         TextInput::make('cost_price')
                                             ->label(__('filament.resources.products.fields.cost_price'))
                                             ->numeric()
-                                            ->prefix('$')
+                                            ->prefix('SAR')
                                             ->minValue(0)
                                             ->step(0.01)
                                             ->placeholder('0.00')

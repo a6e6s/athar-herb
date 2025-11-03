@@ -50,6 +50,7 @@ return [
                 'short_description' => 'Short Description',
                 'description' => 'Full Description',
                 'price' => 'Price',
+                'discount_price' => 'Discount Price',
                 'cost_price' => 'Cost Price',
                 'sku' => 'SKU',
                 'stock_quantity' => 'Stock Quantity',
@@ -84,6 +85,7 @@ return [
                 'sku' => 'Unique code to identify the product in inventory.',
                 'short_description' => 'Maximum 500 characters. Shown in search and product listings.',
                 'price' => 'Selling price for customers',
+                'discount_price' => 'Discounted selling price (must be less than original price)',
                 'cost_price' => 'Purchase or cost price (optional)',
                 'stock_quantity' => 'Current number available in stock',
                 'low_stock_threshold' => 'Alert will be triggered when stock reaches this number',
@@ -505,6 +507,91 @@ return [
 
     'pages' => [
         'dashboard' => 'Dashboard',
+    ],
+
+    'widgets' => [
+        'stats' => [
+            'total_revenue' => 'Total Revenue',
+            'total_orders' => 'Total Orders',
+            'total_customers' => 'Total Customers',
+            'active_products' => 'Active Products',
+            'currency' => 'SAR',
+            'today' => 'Today',
+            'pending' => 'Pending',
+            'from_last_month' => 'from last month',
+            'low_stock' => 'Low Stock',
+        ],
+
+        'sales_chart' => [
+            'heading' => 'Sales Chart',
+            'revenue' => 'Revenue',
+            'filters' => [
+                'today' => 'Today',
+                'week' => 'This Week',
+                'month' => 'This Month',
+                'year' => 'This Year',
+            ],
+        ],
+
+        'recent_orders' => [
+            'heading' => 'Recent Orders',
+            'order_id' => 'Order ID',
+            'customer' => 'Customer',
+            'total' => 'Total',
+            'status' => 'Status',
+            'payment' => 'Payment',
+            'date' => 'Date',
+            'statuses' => [
+                'pending' => 'Pending',
+                'processing' => 'Processing',
+                'completed' => 'Completed',
+                'cancelled' => 'Cancelled',
+            ],
+            'payment_statuses' => [
+                'pending' => 'Pending',
+                'paid' => 'Paid',
+                'failed' => 'Failed',
+            ],
+        ],
+
+        'top_products' => [
+            'heading' => 'Top Selling Products',
+            'image' => 'Image',
+            'product' => 'Product',
+            'category' => 'Category',
+            'price' => 'Price',
+            'stock' => 'Stock',
+            'sold' => 'Sold',
+        ],
+
+        'latest_customers' => [
+            'heading' => 'Latest Customers',
+            'name' => 'Name',
+            'email' => 'Email',
+            'status' => 'Status',
+            'orders' => 'Orders',
+            'joined' => 'Joined',
+        ],
+
+        'low_stock' => [
+            'heading' => 'Low Stock Products',
+            'image' => 'Image',
+            'product' => 'Product',
+            'category' => 'Category',
+            'stock' => 'Stock',
+            'price' => 'Price',
+            'status' => 'Status',
+            'empty_heading' => 'All Products in Stock!',
+            'empty_description' => 'There are no low stock products at the moment.',
+        ],
+
+        'quick_actions' => [
+            'heading' => 'Quick Actions',
+            'pending_orders' => 'Pending Orders',
+            'low_stock' => 'Low Stock Products',
+            'new_customers' => 'New Customers Today',
+            'completed_today' => 'Completed Orders Today',
+        ],
     ],
 
     'auth' => [

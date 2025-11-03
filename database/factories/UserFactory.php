@@ -24,8 +24,9 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
             'email_verified_at' => fake()->dateTime(),
-            'password' => fake()->password(),
-            'role' => fake()->randomElement(["customer","admin"]),
+            'password' => bcrypt('password'),
+            'user_type' => fake()->randomElement(["customer", "admin"]),
+            'is_active' => true,
             'remember_token' => Str::random(10),
         ];
     }

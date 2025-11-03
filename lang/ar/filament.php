@@ -50,6 +50,7 @@ return [
                 'short_description' => 'وصف مختصر',
                 'description' => 'الوصف الكامل',
                 'price' => 'السعر',
+                'discount_price' => 'سعر الخصم',
                 'cost_price' => 'سعر التكلفة',
                 'sku' => 'رمز المنتج',
                 'stock_quantity' => 'الكمية المتوفرة',
@@ -84,6 +85,7 @@ return [
                 'sku' => 'رمز فريد لتحديد المنتج في المخزون.',
                 'short_description' => 'بحد أقصى 500 حرف. يظهر في البحث وقوائم المنتجات.',
                 'price' => 'سعر البيع للعملاء',
+                'discount_price' => 'سعر البيع بعد الخصم (يجب أن يكون أقل من السعر الأصلي)',
                 'cost_price' => 'سعر الشراء أو التكلفة (اختياري)',
                 'stock_quantity' => 'العدد الحالي المتوفر في المخزون',
                 'low_stock_threshold' => 'سيتم التنبيه عندما يصل المخزون لهذا العدد',
@@ -836,6 +838,91 @@ return [
 
     'pages' => [
         'dashboard' => 'لوحة التحكم',
+    ],
+
+    'widgets' => [
+        'stats' => [
+            'total_revenue' => 'إجمالي الإيرادات',
+            'total_orders' => 'إجمالي الطلبات',
+            'total_customers' => 'إجمالي العملاء',
+            'active_products' => 'المنتجات النشطة',
+            'currency' => 'ريال',
+            'today' => 'اليوم',
+            'pending' => 'قيد الانتظار',
+            'from_last_month' => 'من الشهر الماضي',
+            'low_stock' => 'مخزون منخفض',
+        ],
+
+        'sales_chart' => [
+            'heading' => 'مخطط المبيعات',
+            'revenue' => 'الإيرادات',
+            'filters' => [
+                'today' => 'اليوم',
+                'week' => 'هذا الأسبوع',
+                'month' => 'هذا الشهر',
+                'year' => 'هذه السنة',
+            ],
+        ],
+
+        'recent_orders' => [
+            'heading' => 'الطلبات الأخيرة',
+            'order_id' => 'رقم الطلب',
+            'customer' => 'العميل',
+            'total' => 'المجموع',
+            'status' => 'الحالة',
+            'payment' => 'الدفع',
+            'date' => 'التاريخ',
+            'statuses' => [
+                'pending' => 'قيد الانتظار',
+                'processing' => 'قيد المعالجة',
+                'completed' => 'مكتمل',
+                'cancelled' => 'ملغى',
+            ],
+            'payment_statuses' => [
+                'pending' => 'قيد الانتظار',
+                'paid' => 'مدفوع',
+                'failed' => 'فشل',
+            ],
+        ],
+
+        'top_products' => [
+            'heading' => 'المنتجات الأكثر مبيعاً',
+            'image' => 'الصورة',
+            'product' => 'المنتج',
+            'category' => 'الفئة',
+            'price' => 'السعر',
+            'stock' => 'المخزون',
+            'sold' => 'المبيعات',
+        ],
+
+        'latest_customers' => [
+            'heading' => 'أحدث العملاء',
+            'name' => 'الاسم',
+            'email' => 'البريد الإلكتروني',
+            'status' => 'الحالة',
+            'orders' => 'الطلبات',
+            'joined' => 'تاريخ الانضمام',
+        ],
+
+        'low_stock' => [
+            'heading' => 'المنتجات ذات المخزون المنخفض',
+            'image' => 'الصورة',
+            'product' => 'المنتج',
+            'category' => 'الفئة',
+            'stock' => 'المخزون',
+            'price' => 'السعر',
+            'status' => 'الحالة',
+            'empty_heading' => 'جميع المنتجات في المخزون!',
+            'empty_description' => 'لا توجد منتجات ذات مخزون منخفض في الوقت الحالي.',
+        ],
+
+        'quick_actions' => [
+            'heading' => 'إجراءات سريعة',
+            'pending_orders' => 'طلبات قيد الانتظار',
+            'low_stock' => 'منتجات بمخزون منخفض',
+            'new_customers' => 'عملاء جدد اليوم',
+            'completed_today' => 'طلبات مكتملة اليوم',
+        ],
     ],
 
     'auth' => [

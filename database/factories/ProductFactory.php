@@ -21,14 +21,19 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $price = fake()->randomFloat(2, 20, 500);
+        $hasDiscount = fake()->boolean(30); // 30% chance of having discount
+        $discountPrice = $hasDiscount ? fake()->randomFloat(2, $price * 0.5, $price * 0.9) : null;
+
         return [
             'category_id' => Category::factory(),
             'name' => fake()->name(),
             'slug' => fake()->slug(),
             'short_description' => fake()->text(),
             'description' => fake()->text(),
-            'price' => fake()->randomFloat(2, 0, 99999999.99),
-            'cost_price' => fake()->randomFloat(2, 0, 99999999.99),
+            'price' => $price,
+            'discount_price' => $discountPrice,
+            'cost_price' => fake()->randomFloat(2, 10, $price * 0.6),
             'sku' => fake()->regexify('[A-Za-z0-9]{unique}'),
             'stock_quantity' => fake()->numberBetween(-10000, 10000),
             'low_stock_threshold' => fake()->numberBetween(-10000, 10000),
