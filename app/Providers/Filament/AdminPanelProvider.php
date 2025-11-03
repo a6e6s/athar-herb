@@ -44,7 +44,7 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarCollapsibleOnDesktop()
             ->sidebarFullyCollapsibleOnDesktop()
             ->brandName('Athar Herb')
-            ->favicon(asset('favicon.ico'))
+            ->favicon(asset('images/logo.png'))
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('40px')
             ->renderHook('panels::topbar.end', fn() => view('filament.language-switcher'))
