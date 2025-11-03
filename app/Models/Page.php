@@ -39,7 +39,7 @@ class Page extends Model
         return [
             'id' => 'integer',
             'is_published' => 'boolean',
-            'published_at' => 'timestamp',
+            'published_at' => 'datetime',
         ];
     }
 }

@@ -61,9 +61,9 @@ class ProductController extends Controller
         $products = Product::where('is_active', true)
             ->where(function($q) use ($query) {
                 $q->where('name_ar', 'like', "%{$query}%")
-                  ->orWhere('name_en', 'like', "%{$query}%")
+                  ->orWhere('name', 'like', "%{$query}%")
                   ->orWhere('description_ar', 'like', "%{$query}%")
-                  ->orWhere('description_en', 'like', "%{$query}%");
+                  ->orWhere('description', 'like', "%{$query}%");
             })
             ->paginate(12);
 

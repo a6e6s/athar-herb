@@ -11,17 +11,17 @@ php artisan make:filament-resource Testimonial  --generate --view
 php artisan make:filament-resource User  --generate --view
 
 ## prompt for resource enhance and orginizing
-Please refine and enhance the (user) Resource in my Laravel Filament v4 eCommerce application.
-Focus on improving the visual design, layout, and overall user experience across all components — including Forms, Tables, and Infolists.
+Please refine and enhance the (Posts, Pages, Testimonials) Resource in my Laravel Filament v4 eCommerce application.
+Focus on improving the visual design, layout, and overall Posts, Pages, Testimonials experience across all components — including Forms, Tables, and Infolists.
 
-Organize (user) fields into logical sections and tabs.
+Organize (Posts, Pages, Testimonials) fields into logical sections and tabs.
 Add tabs on the top of the table on the ListRecords page for better filtration.
 Apply consistent spacing, icons, and responsive design for a clean, modern interface.
 Improve table usability with better column organization, sorting, filtering, and quick actions.
-Enhance Infolist presentation with a clear and attractive layout for (user) details.
+Enhance Infolist presentation with a clear and attractive layout for (Posts, Pages, Testimonials) details.
 Make sure to add the required translation 
-Ensure the UI aligns with Filament’s V4 best UX practices and provides a seamless workflow for managing (user).
-on the (user) List(user) add multiple tabs for filtration
+Ensure the UI aligns with Filament’s V4 best UX practices and provides a seamless workflow for managing (Posts, Pages, Testimonials).
+on the (Posts, Pages, Testimonials) List(Posts, Pages, Testimonials) add multiple tabs for filtration
 Important: 
     1- when you use this types on form or ListRecords pages (Section,Tabs,Tab,Get,Str) use this 
         [
@@ -32,6 +32,8 @@ Important:
         use Illuminate\Support\Str;
         ]
     2- if there table image record use defaultImageUrl(fn($record) => $record->image_path ? asset('storage/' . $record->image_path) : url('/images/placeholder.png')
-## Prompt for translation 
-Please Translate all Filament resources for (User) and interfaces to support Arabic language.
+-Translation 
+Please Translate all Filament resources for (Posts, Pages, Testimonials) and interfaces to support Arabic language.
 Ensure that all static text, labels, form fields, table columns, navigation items, and notifications are fully translated into Arabic.
+
+

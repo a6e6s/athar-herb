@@ -9,7 +9,7 @@
                 <h1 class="fw-bold mb-3">{{ $post->title_ar }}</h1>
                 <p class="text-muted mb-4">{{ $post->published_at?->format('d M Y') }}</p>
 
-                <img src="{{ asset('storage/' . $post->image) }}"
+                <img src="{{ asset('storage/' . $post->featured_image) }}"
                      alt="{{ $post->title_ar }}"
                      class="img-fluid rounded mb-4">
 

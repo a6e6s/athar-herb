@@ -48,6 +48,9 @@ Route::get('/wishlist', [CartController::class, 'wishlist'])->name('wishlist');
 Route::post('/wishlist/add', [CartController::class, 'addToWishlist'])->name('wishlist.add');
 Route::delete('/wishlist/{id}', [CartController::class, 'removeFromWishlist'])->name('wishlist.remove');
 
+// Checkout Route
+Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+
 // User Routes (requires authentication)
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');

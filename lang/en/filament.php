@@ -506,4 +506,9 @@ return [
     'pages' => [
         'dashboard' => 'Dashboard',
     ],
+
+    'auth' => [
+        'account_deactivated' => 'Your account has been deactivated. Please contact support.',
+        'no_admin_permission' => 'You do not have permission to access the admin panel.',
+    ],
 ];

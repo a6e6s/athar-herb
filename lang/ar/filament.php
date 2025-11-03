@@ -370,18 +370,121 @@ return [
             'label' => 'مقال',
             'plural_label' => 'المقالات',
             'navigation_label' => 'المقالات',
-            'fields' => [
-                'title' => 'العنوان',
-                'slug' => 'المعرف',
+
+            'tabs' => [
                 'content' => 'المحتوى',
-                'excerpt' => 'المقتطف',
+                'media' => 'الوسائط',
+                'seo' => 'تحسين محركات البحث',
+                'publishing' => 'النشر',
+                'all_posts' => 'جميع المقالات',
+                'published' => 'المنشورة',
+                'draft' => 'المسودات',
+                'this_week' => 'هذا الأسبوع',
+                'this_month' => 'هذا الشهر',
+            ],
+
+            'sections' => [
+                'basic_info' => 'المعلومات الأساسية',
+                'basic_info_desc' => 'العنوان والمعرف ومقتطف المقال',
+                'main_content' => 'المحتوى الرئيسي',
+                'main_content_desc' => 'محتوى المقال الكامل',
                 'featured_image' => 'الصورة المميزة',
-                'author_id' => 'الكاتب',
-                'published_at' => 'تاريخ النشر',
+                'featured_image_desc' => 'الصورة الرئيسية للمقال',
+                'seo_settings' => 'إعدادات SEO',
+                'seo_settings_desc' => 'تحسين ظهور المقال في محركات البحث',
+                'publish_settings' => 'إعدادات النشر',
+                'publish_settings_desc' => 'حالة النشر والكاتب',
+                'post_overview' => 'نظرة عامة على المقال',
+                'post_overview_desc' => 'المعلومات الأساسية والحالة',
+                'content' => 'المحتوى',
+                'content_desc' => 'المقتطف والمحتوى الكامل',
+                'media' => 'الوسائط',
+                'media_desc' => 'الصور والملفات المرفقة',
+                'seo_info' => 'معلومات SEO',
+                'seo_info_desc' => 'العنوان والوصف التعريفي',
+                'publish_info' => 'معلومات النشر',
+                'publish_info_desc' => 'الكاتب وتاريخ النشر',
+                'system_info' => 'معلومات النظام',
+                'system_info_desc' => 'معلومات تقنية ومعرفات',
+            ],
+
+            'fields' => [
+                'id' => 'المعرف',
+                'title' => 'العنوان',
+                'title_ar' => 'العنوان بالعربية',
+                'slug' => 'المعرف',
+                'excerpt' => 'المقتطف',
+                'excerpt_ar' => 'المقتطف بالعربية',
+                'content' => 'المحتوى',
+                'content_ar' => 'المحتوى بالعربية',
+                'featured_image' => 'الصورة المميزة',
+                'meta_title' => 'عنوان SEO',
+                'meta_title_ar' => 'عنوان SEO بالعربية',
+                'meta_description' => 'وصف SEO',
+                'meta_description_ar' => 'وصف SEO بالعربية',
+                'author' => 'الكاتب',
                 'is_published' => 'منشور',
+                'published_at' => 'تاريخ النشر',
+                'status' => 'الحالة',
                 'created_at' => 'تاريخ الإنشاء',
                 'updated_at' => 'تاريخ التحديث',
                 'deleted_at' => 'تاريخ الحذف',
+            ],
+
+            'placeholders' => [
+                'title' => 'أدخل عنوان المقال',
+                'title_ar' => 'أدخل عنوان المقال بالعربية',
+                'slug' => 'يتم إنشاؤه تلقائياً من العنوان',
+                'excerpt' => 'ملخص قصير للمقال',
+                'excerpt_ar' => 'ملخص قصير للمقال بالعربية',
+                'content' => 'اكتب محتوى المقال هنا',
+                'content_ar' => 'اكتب محتوى المقال بالعربية هنا',
+                'meta_title' => 'عنوان المقال في محركات البحث',
+                'meta_title_ar' => 'عنوان المقال في محركات البحث بالعربية',
+                'meta_description' => 'وصف المقال في محركات البحث',
+                'meta_description_ar' => 'وصف المقال في محركات البحث بالعربية',
+            ],
+
+            'helpers' => [
+                'slug' => 'يستخدم في رابط URL المقال. يجب أن يكون فريداً.',
+                'excerpt' => 'ملخص قصير يظهر في قوائم المقالات (بحد أقصى 500 حرف)',
+                'featured_image' => 'الصورة الرئيسية للمقال. بحد أقصى 2 ميجابايت',
+                'meta_title' => 'عنوان المقال في نتائج محركات البحث (بحد أقصى 60 حرف)',
+                'meta_description' => 'وصف المقال في نتائج محركات البحث (بحد أقصى 160 حرف)',
+                'author' => 'اختر كاتب المقال',
+                'is_published' => 'إذا كان منشوراً، سيظهر المقال للزوار',
+                'published_at' => 'تاريخ ووقت نشر المقال',
+            ],
+
+            'filters' => [
+                'author' => 'الكاتب',
+                'publish_status' => 'حالة النشر',
+                'published_this_month' => 'المنشورة هذا الشهر',
+                'published_this_week' => 'المنشورة هذا الأسبوع',
+                'trashed' => 'المحذوفة',
+            ],
+
+            'badges' => [
+                'published' => 'منشور',
+                'draft' => 'مسودة',
+                'not_published' => 'غير منشور',
+            ],
+
+            'actions' => [
+                'view' => 'عرض',
+                'edit' => 'تحرير',
+                'delete' => 'حذف',
+                'restore' => 'استعادة',
+                'force_delete' => 'حذف نهائي',
+            ],
+
+            'messages' => [
+                'copied' => 'تم النسخ!',
+            ],
+
+            'empty_state' => [
+                'heading' => 'لا توجد مقالات',
+                'description' => 'ابدأ بإنشاء مقال جديد.',
             ],
         ],
 
@@ -389,14 +492,206 @@ return [
             'label' => 'صفحة',
             'plural_label' => 'الصفحات',
             'navigation_label' => 'الصفحات',
+
+            'tabs' => [
+                'content' => 'المحتوى',
+                'seo' => 'تحسين محركات البحث',
+                'publishing' => 'النشر',
+                'all_pages' => 'جميع الصفحات',
+                'published' => 'المنشورة',
+                'draft' => 'المسودات',
+                'this_week' => 'هذا الأسبوع',
+                'this_month' => 'هذا الشهر',
+            ],
+
+            'sections' => [
+                'basic_info' => 'المعلومات الأساسية',
+                'basic_info_desc' => 'العنوان والمعرف',
+                'main_content' => 'المحتوى الرئيسي',
+                'main_content_desc' => 'محتوى الصفحة الكامل',
+                'seo_settings' => 'إعدادات SEO',
+                'seo_settings_desc' => 'تحسين ظهور الصفحة في محركات البحث',
+                'publish_settings' => 'إعدادات النشر',
+                'publish_settings_desc' => 'حالة النشر والتاريخ',
+                'page_overview' => 'نظرة عامة على الصفحة',
+                'page_overview_desc' => 'المعلومات الأساسية والحالة',
+                'content' => 'المحتوى',
+                'content_desc' => 'المحتوى الكامل للصفحة',
+                'seo_info' => 'معلومات SEO',
+                'seo_info_desc' => 'العنوان والوصف التعريفي',
+                'publish_info' => 'معلومات النشر',
+                'publish_info_desc' => 'حالة وتاريخ النشر',
+                'system_info' => 'معلومات النظام',
+                'system_info_desc' => 'معلومات تقنية ومعرفات',
+            ],
+
             'fields' => [
+                'id' => 'المعرف',
                 'title' => 'العنوان',
+                'title_ar' => 'العنوان بالعربية',
                 'slug' => 'المعرف',
                 'content' => 'المحتوى',
-                'is_published' => 'منشور',
+                'content_ar' => 'المحتوى بالعربية',
+                'meta_title' => 'عنوان SEO',
+                'meta_title_ar' => 'عنوان SEO بالعربية',
+                'meta_description' => 'وصف SEO',
+                'meta_description_ar' => 'وصف SEO بالعربية',
+                'is_published' => 'منشورة',
+                'published_at' => 'تاريخ النشر',
+                'status' => 'الحالة',
                 'created_at' => 'تاريخ الإنشاء',
                 'updated_at' => 'تاريخ التحديث',
                 'deleted_at' => 'تاريخ الحذف',
+            ],
+
+            'placeholders' => [
+                'title' => 'أدخل عنوان الصفحة',
+                'title_ar' => 'أدخل عنوان الصفحة بالعربية',
+                'slug' => 'يتم إنشاؤه تلقائياً من العنوان',
+                'content' => 'اكتب محتوى الصفحة هنا',
+                'content_ar' => 'اكتب محتوى الصفحة بالعربية هنا',
+                'meta_title' => 'عنوان الصفحة في محركات البحث',
+                'meta_title_ar' => 'عنوان الصفحة في محركات البحث بالعربية',
+                'meta_description' => 'وصف الصفحة في محركات البحث',
+                'meta_description_ar' => 'وصف الصفحة في محركات البحث بالعربية',
+            ],
+
+            'helpers' => [
+                'slug' => 'يستخدم في رابط URL الصفحة. يجب أن يكون فريداً.',
+                'meta_title' => 'عنوان الصفحة في نتائج محركات البحث (بحد أقصى 60 حرف)',
+                'meta_description' => 'وصف الصفحة في نتائج محركات البحث (بحد أقصى 160 حرف)',
+                'is_published' => 'إذا كانت منشورة، ستظهر الصفحة للزوار',
+                'published_at' => 'تاريخ ووقت نشر الصفحة',
+            ],
+
+            'filters' => [
+                'publish_status' => 'حالة النشر',
+                'published_this_month' => 'المنشورة هذا الشهر',
+                'published_this_week' => 'المنشورة هذا الأسبوع',
+                'trashed' => 'المحذوفة',
+            ],
+
+            'badges' => [
+                'published' => 'منشورة',
+                'draft' => 'مسودة',
+                'not_published' => 'غير منشورة',
+            ],
+
+            'actions' => [
+                'view' => 'عرض',
+                'edit' => 'تحرير',
+                'delete' => 'حذف',
+                'restore' => 'استعادة',
+                'force_delete' => 'حذف نهائي',
+            ],
+
+            'messages' => [
+                'copied' => 'تم النسخ!',
+            ],
+
+            'empty_state' => [
+                'heading' => 'لا توجد صفحات',
+                'description' => 'ابدأ بإنشاء صفحة جديدة.',
+            ],
+        ],
+
+        'testimonials' => [
+            'label' => 'شهادة',
+            'plural_label' => 'الشهادات',
+            'navigation_label' => 'الشهادات',
+
+            'tabs' => [
+                'basic_info' => 'المعلومات الأساسية',
+                'media' => 'الوسائط',
+                'settings' => 'الإعدادات',
+                'all_testimonials' => 'جميع الشهادات',
+                'approved' => 'المعتمدة',
+                'pending' => 'قيد الانتظار',
+                'high_rated' => 'التقييم العالي',
+                'this_week' => 'هذا الأسبوع',
+                'this_month' => 'هذا الشهر',
+            ],
+
+            'sections' => [
+                'person_info' => 'معلومات الشخص',
+                'person_info_desc' => 'الاسم والمنصب',
+                'testimonial_content' => 'محتوى الشهادة',
+                'testimonial_content_desc' => 'النص والتقييم',
+                'avatar' => 'الصورة الشخصية',
+                'avatar_desc' => 'صورة الشخص',
+                'display_settings' => 'إعدادات العرض',
+                'display_settings_desc' => 'الموافقة والترتيب',
+                'testimonial_overview' => 'نظرة عامة على الشهادة',
+                'testimonial_overview_desc' => 'المعلومات الأساسية',
+                'content' => 'المحتوى',
+                'content_desc' => 'نص الشهادة',
+                'rating_status' => 'التقييم والحالة',
+                'rating_status_desc' => 'التقييم وحالة الموافقة',
+                'system_info' => 'معلومات النظام',
+                'system_info_desc' => 'معلومات تقنية ومعرفات',
+            ],
+
+            'fields' => [
+                'id' => 'المعرف',
+                'name' => 'الاسم',
+                'name_ar' => 'الاسم بالعربية',
+                'role' => 'المنصب',
+                'role_ar' => 'المنصب بالعربية',
+                'content' => 'المحتوى',
+                'content_ar' => 'المحتوى بالعربية',
+                'rating' => 'التقييم',
+                'avatar' => 'الصورة الشخصية',
+                'is_approved' => 'معتمدة',
+                'sort_order' => 'ترتيب العرض',
+                'created_at' => 'تاريخ الإنشاء',
+                'updated_at' => 'تاريخ التحديث',
+                'deleted_at' => 'تاريخ الحذف',
+            ],
+
+            'placeholders' => [
+                'name' => 'أدخل اسم الشخص',
+                'name_ar' => 'أدخل اسم الشخص بالعربية',
+                'role' => 'مثال: المدير التنفيذي',
+                'role_ar' => 'مثال: المدير التنفيذي',
+                'content' => 'اكتب نص الشهادة هنا',
+                'content_ar' => 'اكتب نص الشهادة بالعربية هنا',
+            ],
+
+            'helpers' => [
+                'role' => 'المنصب أو الوظيفة (اختياري)',
+                'content' => 'نص الشهادة (بحد أقصى 1000 حرف)',
+                'rating' => 'التقييم من 1 إلى 5 نجوم',
+                'avatar' => 'صورة الشخص. بحد أقصى 1 ميجابايت',
+                'is_approved' => 'إذا كانت معتمدة، ستظهر الشهادة للزوار',
+                'sort_order' => 'ترتيب العرض (الأرقام الأصغر تظهر أولاً)',
+            ],
+
+            'filters' => [
+                'approval_status' => 'حالة الموافقة',
+                'rating' => 'التقييم',
+                'created_this_month' => 'المضافة هذا الشهر',
+                'created_this_week' => 'المضافة هذا الأسبوع',
+                'trashed' => 'المحذوفة',
+            ],
+
+            'badges' => [
+                'approved' => 'معتمدة',
+                'pending' => 'قيد الانتظار',
+                'stars' => 'نجوم',
+                'star' => 'نجمة',
+            ],
+
+            'actions' => [
+                'view' => 'عرض',
+                'edit' => 'تحرير',
+                'delete' => 'حذف',
+                'restore' => 'استعادة',
+                'force_delete' => 'حذف نهائي',
+            ],
+
+            'empty_state' => [
+                'heading' => 'لا توجد شهادات',
+                'description' => 'ابدأ بإنشاء شهادة جديدة.',
             ],
         ],
 
@@ -425,24 +720,6 @@ return [
                 'question' => 'السؤال',
                 'answer' => 'الإجابة',
                 'display_order' => 'ترتيب العرض',
-                'is_active' => 'نشط',
-                'created_at' => 'تاريخ الإنشاء',
-                'updated_at' => 'تاريخ التحديث',
-                'deleted_at' => 'تاريخ الحذف',
-            ],
-        ],
-
-        'testimonials' => [
-            'label' => 'شهادة',
-            'plural_label' => 'الشهادات',
-            'navigation_label' => 'الشهادات',
-            'fields' => [
-                'name' => 'الاسم',
-                'position' => 'المنصب',
-                'company' => 'الشركة',
-                'content' => 'المحتوى',
-                'image_path' => 'الصورة',
-                'rating' => 'التقييم',
                 'is_active' => 'نشط',
                 'created_at' => 'تاريخ الإنشاء',
                 'updated_at' => 'تاريخ التحديث',
@@ -559,5 +836,10 @@ return [
 
     'pages' => [
         'dashboard' => 'لوحة التحكم',
+    ],
+
+    'auth' => [
+        'account_deactivated' => 'تم تعطيل حسابك. يرجى التواصل مع الدعم الفني.',
+        'no_admin_permission' => 'ليس لديك صلاحية للوصول إلى لوحة التحكم.',
     ],
 ];

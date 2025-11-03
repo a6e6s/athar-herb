@@ -32,7 +32,7 @@ Successfully refactored all web routes from inline closures to proper MVC contro
 - Sorting capabilities
 - Pagination (12 items per page)
 - Related products from same category
-- Search in name_ar, name_en, description_ar, description_en
+- Search in name_ar, name, description_ar, description
 
 ### 3. CategoryController
 **File**: `app/Http/Controllers/CategoryController.php`

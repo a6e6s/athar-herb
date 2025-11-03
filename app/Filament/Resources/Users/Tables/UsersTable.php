@@ -8,9 +8,8 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
@@ -57,11 +56,9 @@ class UsersTable
                     ->searchable()
                     ->toggleable(),
 
-                IconColumn::make('is_active')
+                ToggleColumn::make('is_active')
                     ->label(__('filament.resources.users.fields.is_active'))
-                    ->boolean()
-                    ->sortable()
-                    ->toggleable(),
+                    ->sortable(),
 
 
                 TextColumn::make('created_at')

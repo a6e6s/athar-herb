@@ -11,7 +11,7 @@
                 @foreach($posts as $post)
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100 shadow-sm">
-                            <img src="{{ asset('storage/' . $post->image) }}"
+                            <img src="{{ asset('storage/' . $post->featured_image) }}"
                                  class="card-img-top"
                                  alt="{{ $post->title_ar }}"
                                  style="height: 200px; object-fit: cover;">

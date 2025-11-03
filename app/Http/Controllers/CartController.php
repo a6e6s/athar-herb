@@ -132,4 +132,15 @@ class CartController extends Controller
 
         return response()->json(['success' => false], 404);
     }
+
+    public function checkout()
+    {
+        $cartItems = session()->get('cart', []);
+
+        if (empty($cartItems)) {
+            return redirect()->route('cart')->with('error', 'سلة التسوق فارغة');
+        }
+
+        return view('pages.checkout', compact('cartItems'));
+    }
 }

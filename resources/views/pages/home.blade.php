@@ -213,7 +213,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="card blog-card h-100 shadow-sm">
                             <div class="position-relative">
-                                <img src="{{ asset('storage/' . $post->image) }}"
+                                <img src="{{ asset('storage/' . $post->featured_image) }}"
                                      class="card-img-top"
                                      alt="{{ $post->title_ar }}"
                                      style="height: 250px; object-fit: cover;">
