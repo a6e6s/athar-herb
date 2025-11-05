@@ -112,6 +112,18 @@ models:
     is_active: boolean default:true
     timestamps: true
 
+  ContactMessage:
+    name: string
+    email: string
+    phone: string
+    subject: string
+    message: text
+    status: string default:pending index
+    ip_address: string nullable
+    user_agent: text nullable
+    softDeletes: true
+    timestamps: true
+
 pivot_tables:
   category_product:
     category_id: id foreign

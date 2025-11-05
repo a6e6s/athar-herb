@@ -434,6 +434,38 @@ return [
             ],
         ],
 
+        'contact_messages' => [
+            'label' => 'Contact Message',
+            'plural_label' => 'Contact Messages',
+            'navigation_label' => 'Contact Messages',
+            'fields' => [
+                'name' => 'Name',
+                'email' => 'Email',
+                'phone' => 'Phone',
+                'subject' => 'Subject',
+                'message' => 'Message',
+                'status' => 'Status',
+                'ip_address' => 'IP Address',
+                'user_agent' => 'User Agent',
+                'replied_at' => 'Replied At',
+                'replied_by' => 'Replied By',
+                'reply_message' => 'Reply Message',
+                'created_at' => 'Submitted At',
+                'updated_at' => 'Updated At',
+                'deleted_at' => 'Deleted At',
+            ],
+            'sections' => [
+                'contact_information' => 'Contact Information',
+                'status_response' => 'Status & Response',
+                'additional_information' => 'Additional Information',
+            ],
+            'status_options' => [
+                'pending' => 'Pending',
+                'read' => 'Read',
+                'replied' => 'Replied',
+            ],
+        ],
+
         'testimonials' => [
             'label' => 'Testimonial',
             'plural_label' => 'Testimonials',

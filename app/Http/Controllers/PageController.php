@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -36,11 +37,20 @@ class PageController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
             'subject' => 'required|string|max:255',
-            'message' => 'required|string',
+            'message' => 'required|string|max:5000',
         ]);
 
-        // Here you can send email, save to database, etc.
-        // For now, just return success
+        // Save contact message to database
+        ContactMessage::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'subject' => $validated['subject'],
+            'message' => $validated['message'],
+            'status' => 'pending',
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+        ]);
 
         return redirect()->route('contact')
             ->with('success', 'تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.');

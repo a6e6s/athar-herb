@@ -729,6 +729,38 @@ return [
             ],
         ],
 
+        'contact_messages' => [
+            'label' => 'رسالة تواصل',
+            'plural_label' => 'رسائل التواصل',
+            'navigation_label' => 'رسائل التواصل',
+            'fields' => [
+                'name' => 'الاسم',
+                'email' => 'البريد الإلكتروني',
+                'phone' => 'رقم الهاتف',
+                'subject' => 'الموضوع',
+                'message' => 'الرسالة',
+                'status' => 'الحالة',
+                'ip_address' => 'عنوان IP',
+                'user_agent' => 'معلومات المتصفح',
+                'replied_at' => 'تاريخ الرد',
+                'replied_by' => 'الرد بواسطة',
+                'reply_message' => 'رسالة الرد',
+                'created_at' => 'تاريخ الإرسال',
+                'updated_at' => 'تاريخ التحديث',
+                'deleted_at' => 'تاريخ الحذف',
+            ],
+            'sections' => [
+                'contact_information' => 'معلومات الاتصال',
+                'status_response' => 'الحالة والرد',
+                'additional_information' => 'معلومات إضافية',
+            ],
+            'status_options' => [
+                'pending' => 'قيد الانتظار',
+                'read' => 'مقروءة',
+                'replied' => 'تم الرد',
+            ],
+        ],
+
         'users' => [
             'label' => 'مستخدم',
             'plural_label' => 'المستخدمون',
