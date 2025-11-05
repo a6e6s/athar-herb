@@ -311,7 +311,7 @@
                 </div>
 
                 <div class="col-lg-6 text-center">
-                    <img src="{{ asset('images/logo.png') }}"
+                    <img src="{{ asset('images/logolg.png') }}"
                          alt="أثر الأعشاب"
                          class="img-fluid rounded shadow"
                          style="max-width: 400px;">
