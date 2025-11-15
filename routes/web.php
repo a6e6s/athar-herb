@@ -11,7 +11,7 @@ use App\Http\Controllers\UserController;
 
 // Home Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::redirect('/dashboard', '/')->name('home.redirect');
+
 // Products Routes
 Route::prefix('products')->name('products.')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');

@@ -37,3 +37,7 @@ Please Translate all Filament resources for (Posts, Pages, Testimonials) and int
 Ensure that all static text, labels, form fields, table columns, navigation items, and notifications are fully translated into Arabic.
 
 
+** updates**
+1- email messaging (registration, order, order updates,user communication )
+2- payment gateway
+3- upload products (imag,description, category, generate seeder)
