@@ -30,12 +30,12 @@ class ProductsTable
                     ->defaultImageUrl(fn($record) => $record->image_path ? asset('storage/' . $record->image_path) : url('/images/placeholder-product.png'))
                     ->width(50),
 
-                TextColumn::make('name')
+                TextColumn::make('name_ar')
                     ->label(__('filament.resources.products.fields.name'))
                     ->searchable()
                     ->sortable()
                     ->weight('bold')
-                    ->description(fn($record) => $record->sku)
+                    ->description(fn($record) => $record->sku ."-". $record->name)
                     ->icon('heroicon-m-cube')
                     ->iconColor('primary'),
 
