@@ -377,6 +377,13 @@ class DatabaseSeeder extends Seeder
             'published_at' => now(),
         ]);
 
+        // Seed Categories and Products from CSV or sample data
+        $this->command->info('Seeding categories...');
+        $this->call(CategorySeeder::class);
+
+        $this->command->info('Seeding products...');
+        $this->call(ProductSeeder::class);
+
         // Seed Orders
         $this->command->info('Seeding orders...');
         $this->call(OrderSeeder::class);
@@ -384,4 +391,3 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Database seeded successfully!');
     }
 }
-
